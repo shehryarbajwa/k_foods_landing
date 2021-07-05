@@ -18,22 +18,22 @@ const NavBar = ({ click }) => {
     <>
       <Nav>
         <NavbarContainer>
-          <NavLogo to="/">Mandi</NavLogo>
+          <NavLogo to="/">منڈی</NavLogo>
           <MobileIcon onClick={click}>
             <FaBars />
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks to="home">خریدیں</NavLinks>
+              <NavLinks to="home">منڈی</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="about">About</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="buy">Buy</NavLinks>
+              <NavLinks to="buy">خریدیں</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="sell">Sell</NavLinks>
+              <NavLinks to="sell">فروخت</NavLinks>
             </NavItem>
           </NavMenu>
         </NavbarContainer>
