@@ -22,7 +22,7 @@ const HeroSection = () => {
 
                 </HeroP>
                 <HeroBtnWrapper>
-                    <Button to="/sell" onMouseEnter={hover} onMouseLeave={hover} primary="true" dark="true" big="true">
+                    <Button to="/sell" onMouseEnter={hover} onMouseLeave={hover} primary="true" big="true">
                     منڈی پر فروخت
  {hover ? <ArrowForward /> : <ArrowRight />}
                     </Button>

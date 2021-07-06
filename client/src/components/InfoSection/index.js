@@ -17,10 +17,10 @@ import {
 
 
 
-const InfoSection = ({lightBg,
+const InfoSection = ({greenBg,
     imgStart,
     topLine,
-    lightText,
+    greenText,
     headline,
     description,
     buttonLabel,
@@ -32,22 +32,26 @@ const InfoSection = ({lightBg,
     dark,
     dark2 }) => {
     return (
-        <InfoContainer id={id} lightBg='true'>
+        <InfoContainer id={id} greenBg={greenBg}>
             <InfoWrapper>
-                <InfoRow>
+                <InfoRow imgStart={imgStart}>
                     <Column1>
                     <TextWrapper>
-                        <TopLine>TopLine</TopLine>
-                        <Heading>Heading</Heading>
-                        <Subtitle>Subtitle</Subtitle>
+                        <TopLine>{topLine}</TopLine>
+                        <Heading greenText={greenText}>{headline}</Heading>
+                        <Subtitle darkText={darkText}>{description}</Subtitle>
                         <BtnWrap>
-                            <Button to="home">Button</Button>
+                            <Button 
+                            to="home" 
+                            primary={primary}
+                            
+                            >{buttonLabel}</Button>
                         </BtnWrap>
                     </TextWrapper>
                     </Column1>
                     <Column2>
                     <ImgWrap>
-                    <Img />
+                    <Img src={img} alt={alt} />
                     </ImgWrap>
                     </Column2>
                 </InfoRow>

@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {SidebarContainer, Icon, CloseIcon, SidebarMenu, SidebarLink, SidebarWrapper} from './SidebarElements'
 
 const Sidebar = ({isOpen, toggle}) => {
+    const [english, setEnglish] = useState(true)
     return (
         <SidebarContainer isOpen={isOpen} onClick={toggle}>
             <Icon onClick={toggle}>
@@ -10,17 +11,20 @@ const Sidebar = ({isOpen, toggle}) => {
 
         <SidebarWrapper>
             <SidebarMenu>
+                <SidebarLink>
+                    {english ? 'Mandi' : 'منڈی'}
+                </SidebarLink>
                 <SidebarLink to='home' onClick={toggle}>
-                    Home
+                منڈی
                 </SidebarLink>
                 <SidebarLink to='about' onClick={toggle}>
-                    About
+                کیا ہے منڈی
                 </SidebarLink>
                 <SidebarLink to='buy' onClick={toggle}>
-                    Buy
+                خریدیں
                 </SidebarLink>
                 <SidebarLink to='sell' onClick={toggle}>
-                    Sell
+                فروخت
                 </SidebarLink>
             </SidebarMenu>
         </SidebarWrapper>

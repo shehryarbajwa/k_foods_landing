@@ -27,7 +27,7 @@ const NavBar = ({ click }) => {
               <NavLinks to="home">منڈی</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="about">About</NavLinks>
+              <NavLinks to="about">کیا ہے منڈی</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="buy">خریدیں</NavLinks>
