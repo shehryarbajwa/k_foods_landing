@@ -5,13 +5,14 @@ export const homerObjOne = {
     greenBg: 'true',
     greenText: true,
     lightTextDesc: true,
-    topLine: 'About Mandi',
-    headline: 'How Mandi Works',
-    description: `Mandi is Pakistan's largest Fresh Produce Supply Chain Company. We are pioneers in solving one of the toughest supply chain problems of the world by leveraging innovative technology. We source fresh produce from farmers and deliver them to businesses within 24 hours.`,
+    topLine: 'منڈی',
+    headline: 'کیا ہے منڈی',
+    description: `منڈی کسانوں کو سیدھا خریداروں ریسٹورنٹوں اور سہولت کاروں کے ساتھ ملا کر پاکستان کے کسانوں اور سہولت کاروں کے ایک اہم مسئلے کو حل کر رہی ہے۔
+    `,
     buttonLabel: 'Know More',
     imgStart: false,
     img: WatermelonImage,
-    alt: 'Farm',
+    alt: 'Watermelon',
     dark: false,
     primary: false,
     darkText: false
