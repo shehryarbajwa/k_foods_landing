@@ -11,46 +11,46 @@ import {
   ServicesIcon,
   ServicesH2,
   ServicesItem,
+  ServicesList,
 } from "./ServicesElements";
 
 const Services = () => {
   return (
-    <>
-      <ServicesContainer>
-        <ServicesH1>Our Services</ServicesH1>
-        <ServicesWrapper>
-          <ServicesCard>
-            <ServicesIcon src={Icon1}>
-              <ServicesH2>Benefits for Farmers</ServicesH2>
-              <ServicesItem>20% more revenue</ServicesItem>
-              <ServicesItem>One-stop-sale</ServicesItem>
-              <ServicesItem>Fast payment</ServicesItem>
-              <ServicesItem>Fast payment</ServicesItem>
-            </ServicesIcon>
-          </ServicesCard>
-          <ServicesCard>
-            <ServicesIcon src={Icon2}>
-              <ServicesH2>Convenience for Retailers</ServicesH2>
-              <ServicesItem>Competitive Pricing</ServicesItem>
-              <ServicesItem>Doorstep delivery</ServicesItem>
-              <ServicesItem>High quality graded produce</ServicesItem>
-              <ServicesItem>Convenient and time saving</ServicesItem>
-            </ServicesIcon>
-          </ServicesCard>
-          <ServicesCard>
-            <ServicesIcon src={Icon3}>
-              <ServicesH2>Savings for vendors</ServicesH2>
-              <ServicesItem>Hygienically handled produce</ServicesItem>
-              <ServicesItem>
-                100% traceable to farm - Improves food safety
-              </ServicesItem>
-              <ServicesItem>Better quality</ServicesItem>
-              <ServicesItem>Convenient and time saving</ServicesItem>
-            </ServicesIcon>
-          </ServicesCard>
-        </ServicesWrapper>
-      </ServicesContainer>
-    </>
+    <ServicesContainer id="services">
+      <ServicesH1>Our Services</ServicesH1>
+      <ServicesWrapper>
+        <ServicesCard>
+          <ServicesIcon src={Icon1} />
+          <ServicesH2>Benefits for Farmers</ServicesH2>
+          <ServicesList>
+          <ServicesItem>20% more revenue</ServicesItem>
+          <ServicesItem>One-stop-sale</ServicesItem>
+          <ServicesItem>Fast payment</ServicesItem>
+          <ServicesItem>Convenience</ServicesItem>
+          </ServicesList>
+        </ServicesCard>
+        <ServicesCard>
+          <ServicesIcon src={Icon2} />
+          <ServicesH2>Convenience for Retailers</ServicesH2>
+          <ServicesList>
+          <ServicesItem>Competitive Pricing</ServicesItem>
+          <ServicesItem>Doorstep delivery</ServicesItem>
+          <ServicesItem>High quality graded produce</ServicesItem>
+          <ServicesItem>Convenience</ServicesItem>
+          </ServicesList>
+        </ServicesCard>
+        <ServicesCard>
+          <ServicesIcon src={Icon3} />
+          <ServicesH2>Savings for vendors</ServicesH2>
+          <ServicesList>
+            <ServicesItem>Hygienical produce</ServicesItem>
+            <ServicesItem>100% traceable to farm</ServicesItem>
+            <ServicesItem>Better quality</ServicesItem>
+            <ServicesItem>Convenience</ServicesItem>
+          </ServicesList>
+        </ServicesCard>
+      </ServicesWrapper>
+    </ServicesContainer>
   );
 };
 
