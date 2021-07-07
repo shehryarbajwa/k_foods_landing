@@ -4,9 +4,11 @@ import styled from 'styled-components'
 export const InfoContainer = styled.div`
   color: #121111;
   background: ${({ greenBg }) => (greenBg ? '#e3fcec' : '#010606')};
+  padding: 5px 5px;
+  
 
   @media screen and (max-width: 768px) {
-    padding: 100px 0;
+    padding: 5px 5px ;
   }
 `;
 
@@ -28,7 +30,9 @@ export const InfoRow = styled.div`
   align-items: center;
   grid-template-areas: ${({ imgStart }) =>
     imgStart ? "'col2 col1'" : "'col1 col2'"};
-  /* Must use '\' css class \'' */
+  /* Must use '\' css class \''
+    If the imageStart is true, then use col2 then col1 as grid template area to begin displaying InfoRow
+  */
 
   @media screen and (max-width: 768px) {
     grid-template-areas: ${({ imgStart }) =>
