@@ -21,9 +21,9 @@ const Services = () => {
       <ServicesWrapper>
         <ServicesCard>
           <ServicesIcon src={Icon1} />
-          <ServicesH2>Benefits for Farmers</ServicesH2>
+          <ServicesH2>کیا ہے منڈی</ServicesH2>
           <ServicesList>
-          <ServicesItem>20% more revenue</ServicesItem>
+          <ServicesItem>کیا ہے منڈی</ServicesItem>
           <ServicesItem>One-stop-sale</ServicesItem>
           <ServicesItem>Fast payment</ServicesItem>
           <ServicesItem>Convenience</ServicesItem>
