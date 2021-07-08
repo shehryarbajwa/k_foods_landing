@@ -46,16 +46,11 @@ const Footer = () => {
             منڈی
             </SocialLogo>
             <WebsiteRights> منڈی  All rights reserved © </WebsiteRights>
-            <SocialIcons>
-              <SocialIconLink
-                target='_blank'
-                aria-label='Twitter'
-                href='//www.twitter.com/briandesignz'
-              >
-                <FaTwitter />
-                Buy on Mandi
-              </SocialIconLink>
-            </SocialIcons>
+            <FooterLinkItems>
+              <FooterLink to='/about'>About</FooterLink>
+              <FooterLink to='/buy'>Buy on Mandi</FooterLink>
+              <FooterLink to='/sell'>Sell on Mandi</FooterLink>
+            </FooterLinkItems>
           </SocialMediaWrap>
         </SocialMedia>
       </FooterWrap>

@@ -9,8 +9,7 @@ export const FooterWrap = styled.div`
   padding: 48px 24px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: left;
   max-width: 1200px;
   margin: 0 auto;
 `;
@@ -20,30 +19,28 @@ export const FooterLinksContainer = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 820px) {
-    padding-top: 12px;
+    padding-top: 2px;
   }
 `;
 
 export const FooterLinksWrapper = styled.div`
   display: flex;
 
-  @media screen and (max-width: 820px) {
-    flex-direction: column;
-  }
+//   @media screen and (max-width: 820px) {
+//     flex-direction: column;
+//   }
 `;
 
 export const FooterLinkItems = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   margin: 16px;
+  padding: 10 10px;
   text-align: left;
   width: 160px;
-  box-sizing: border-box;
   color: #fff;
 
   @media screen and (max-width: 420px) {
-    margin: 100;
+    margin: 0;
     padding: 10px;
     width: 100%;
   }
