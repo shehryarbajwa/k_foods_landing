@@ -102,7 +102,6 @@ export const Subtitle = styled.p`
   @media screen and (max-width: 768px) {
     font-size: 18px;
     overflow: visible;
-
   }
 `;
 

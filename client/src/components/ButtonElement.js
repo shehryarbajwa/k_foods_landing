@@ -26,8 +26,8 @@ export const Button = styled(Link)`
     padding: 10px 20px;
     margin-top: 10px;
     overflow: visible;
-    
   }
+
 `;
 
 export default Button;
