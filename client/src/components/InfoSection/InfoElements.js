@@ -4,12 +4,13 @@ import styled from 'styled-components'
 export const InfoContainer = styled.div`
   color: #121111;
   background: ${({ greenBg }) => (greenBg ? '#e3fcec' : '#010606')};
-  padding: 5px 5px;
+  padding: 5px 5px 5px 5px;
   
 
   @media screen and (max-width: 768px) {
-    padding: 5px 5px ;
+    padding: 2px 2px 2px 2px;
   }
+  
 `;
 
 export const InfoWrapper = styled.div`
@@ -66,18 +67,29 @@ export const TopLine = styled.div`
   letter-spacing: 1.4px;
   text-transform: uppercase;
   margin-bottom: 34px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 23px;
+    overflow: visible;
+
+  }
+
 `;
 
 export const Heading = styled.h1`
-  margin-bottom: 34px;
+  margin-bottom: 32px;
   font-size: 48px;
   line-height: 1.1;
   font-weight: 600;
   color: ${({ greenText }) => (greenText ? '#01bf71' : '#010606')};
 
-  @media screen and (max-width: 480px) {
-    font-size: 32px;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 15px;
+    font-size: 18px;
+    overflow: visible;
+
   }
+  
 `;
 
 export const Subtitle = styled.p`
@@ -86,6 +98,12 @@ export const Subtitle = styled.p`
   font-size: 18px;
   line-height: 24px;
   color: ${({ darkText }) => (darkText ? '#01bf71' : '#01bf71')};
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+    overflow: visible;
+
+  }
 `;
 
 export const BtnWrap = styled.div`

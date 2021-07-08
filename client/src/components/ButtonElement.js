@@ -22,9 +22,11 @@ export const Button = styled(Link)`
   }
 
   @media screen and (max-width: 768px) {
-    font-size: 10px;
+    font-size: 13px;
     padding: 10px 20px;
-    margin-top: -20px;
+    margin-top: 10px;
+    overflow: visible;
+    
   }
 `;
 

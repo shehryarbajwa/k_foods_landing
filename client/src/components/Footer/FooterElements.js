@@ -6,38 +6,30 @@ export const FooterContainer = styled.footer`
 `;
 
 export const FooterWrap = styled.div`
-  padding: 48px 24px;
+  padding: 5px 20px;
   display: flex;
-  flex-direction: column;
-  align-items: left;
+  // flex-direction: reverse-row;
+  align-items: center;
   max-width: 1200px;
-  margin: 0 auto;
 `;
 
 export const FooterLinksContainer = styled.div`
-  display: flex;
-  justify-content: center;
-
-  @media screen and (max-width: 820px) {
-    padding-top: 2px;
-  }
+    display:inline-block;
+    line-height: 1.5;
+    text-decoration: none;
+    color:  inherit;
 `;
 
 export const FooterLinksWrapper = styled.div`
-  display: flex;
-
-//   @media screen and (max-width: 820px) {
-//     flex-direction: column;
-//   }
+  display: inline-block;
 `;
 
 export const FooterLinkItems = styled.div`
-  display: flex;
-  margin: 16px;
-  padding: 10 10px;
+  display: inline-block;
+  margin: 50px;
   text-align: left;
-  width: 160px;
-  color: #fff;
+  width: 1200px;
+  color: black;
 
   @media screen and (max-width: 420px) {
     margin: 0;
@@ -46,21 +38,36 @@ export const FooterLinkItems = styled.div`
   }
 `;
 
-export const FooterLinkTitle = styled.h1`
-  font-size: 14px;
-  margin-bottom: 16px;
-`;
+
 
 export const FooterLink = styled(Link)`
   color: #fff;
   text-decoration: none;
-  margin-bottom: 1rem;
-  font-size: 18px;
+  margin: 100px;
+  font-size: 22px;
 
   &:hover {
     color: #01bf71;
     transition: 0.3s ease-out;
   }
+
+  @media screen and (max-width: 768px) {
+    margin: 9px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: 820px) {
+    margin: 9px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    overflow: hidden;
+  }
+
+  
+
+
 `;
 
 export const SocialMedia = styled.section`
@@ -94,15 +101,11 @@ export const SocialLogo = styled(Link)`
 
 export const WebsiteRights = styled.small`
   color: #fff;
-  margin-bottom: 16px;
+  font-size: 16px;
+
 `;
 
-export const SocialIcons = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 240px;
-`;
+
 
 export const SocialIconLink = styled.a`
   color: #fff;
