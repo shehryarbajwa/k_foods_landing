@@ -1,5 +1,6 @@
 import React from "react";
 import useForm from "./UseForm";
+import eggImage from "../../images/egg.png";
 import {
   FormListContainer,
   FormHeading,
@@ -25,9 +26,9 @@ const Form = () => {
             Get started with us today! Create your account by filling out the
             information below.
           </FormHeading>
-          
+
           <FormListWrapper>
-          <FormLabel>Username</FormLabel>
+            <FormLabel>Username</FormLabel>
             <FontInput
               type="text"
               name="username"
@@ -79,6 +80,7 @@ const Form = () => {
           </FormListWrapper>
           <FormListWrapper>
             <FormLabel>Username</FormLabel>
+          
             <FontInput
               type="text"
               name="username"
@@ -88,7 +90,7 @@ const Form = () => {
             />
           </FormListWrapper>
           <FormListWrapper>
-          <FormLabel>Username</FormLabel>
+            <FormLabel>Username</FormLabel>
             <FontInput
               type="text"
               name="username"
@@ -96,10 +98,12 @@ const Form = () => {
               value=""
               // onChange={handleChange}
             />
-            
-            
           </FormListWrapper>
           <FormButton type="submit">Submit</FormButton>
+          <label>
+          <input type="radio" name="test" value="small" checked />
+          <img src={eggImage} width="100px" height="100px" />
+          </label>
         </FormWrapper>
       </FormListContainer>
     </>
