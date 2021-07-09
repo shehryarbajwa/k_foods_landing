@@ -1,13 +1,21 @@
-import React from 'react'
-import NavBar from '../components/NavBar'
+import React, { useState } from "react";
+import NavBar from "../components/NavBar";
+import Sidebar from "../components/Sidebar";
+import Form from "../components/Forms/Form";
 
-const buyPage = () => {
-    return (
-        <div>
-            <NavBar />
-            <h1>Hello</h1>
-        </div>
-    )
-}
+const BuyPage = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-export default buyPage
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <>
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <Form />
+    </>
+  );
+};
+
+export default BuyPage;

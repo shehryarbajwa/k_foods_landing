@@ -18,12 +18,10 @@ const Home = () => {
     return (
         <>
             <Sidebar isOpen={isOpen} toggle={toggle}/>
-            <NavBar click={toggle} />
             <HeroSection />
             <InfoSection {...homeObjOne} />
             <InfoSection {...homeObjTwo} />
             <InfoSection {...homeObjThree} />
-            <Footer />
         </>
     )
 }
