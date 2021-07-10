@@ -18,11 +18,11 @@ export const Button = styled(Link)`
 
   &:hover {
     transition: all 0.3s ease-in-out;
-    background: ${({ primary }) => (primary ? '#bff7b5' : '#e3fcec')};
+    background: ${({ primary }) => (primary ? '#bff7b5' : '#fff')};
   }
 
   @media screen and (max-width: 768px) {
-    font-size: 13px;
+    font-size: 24px;
     padding: 10px 20px;
     margin-top: 10px;
     overflow: visible;

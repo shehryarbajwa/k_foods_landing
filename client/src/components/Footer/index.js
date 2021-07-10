@@ -22,10 +22,10 @@ const Footer = () => {
         <FooterLinksContainer>
           <FooterLinksWrapper>
             <FooterLinkItems>
-              <FooterLink to="/about" onClick={toggleHome}>کیا ہے منڈی</FooterLink>
-              <FooterLink to="/buy" onClick={toggleHome}>خریدیں</FooterLink>
-              <FooterLink to="/sell" onClick={toggleHome}>فروخت</FooterLink>
-              <WebsiteRights> All rights reserved © منڈی </WebsiteRights>
+              <FooterLink to="/about" onClick={toggleHome}>کیا ہے منڈی   </FooterLink>
+              <FooterLink to="/buy" onClick={toggleHome}>خریدیں   </FooterLink>
+              <FooterLink to="/sell" onClick={toggleHome}>فروخت   </FooterLink>
+              <WebsiteRights> All rights reserved © منڈی   </WebsiteRights>
             </FooterLinkItems>
           </FooterLinksWrapper>
         </FooterLinksContainer>

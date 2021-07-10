@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import NavBar from "../components/NavBar";
 import Sidebar from "../components/Sidebar";
 import Form from "../components/Forms/Form";
 

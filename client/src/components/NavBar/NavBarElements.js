@@ -16,6 +16,9 @@ export const Nav = styled.nav`
     position: sticky;
     top: 0;
     z-index: 10;
+    border-bottom:0.5px solid;
+    border-bottom-color: rgb(14,46,7);
+    padding-bottom: 20px;
 
     @media screen and (max-width: 960px){
         transition: 0.8s all ease;

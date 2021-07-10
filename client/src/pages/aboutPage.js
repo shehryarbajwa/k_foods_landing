@@ -1,11 +1,15 @@
 import React from 'react'
+import Services from '../components/Services/index'
+import About from '../components/AboutSection/index'
 
-const aboutPage = () => {
+const AboutPage = () => {
     return (
-        <div>
+        <>
+            <About />
+            <Services />
             
-        </div>
+        </>
     )
 }
 
-export default aboutPage
+export default AboutPage;

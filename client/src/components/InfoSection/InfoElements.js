@@ -1,16 +1,14 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 export const InfoContainer = styled.div`
   color: #121111;
-  background: ${({ greenBg }) => (greenBg ? '#e3fcec' : '#010606')};
-  padding: 5px 5px 5px 5px;
-  
+  background: ${({ greenBg }) => (greenBg ? "#e3fcec" : "#010606")};
+  padding: 2px 2px 2px 2px;
 
   @media screen and (max-width: 768px) {
     padding: 2px 2px 2px 2px;
   }
-  
 `;
 
 export const InfoWrapper = styled.div`
@@ -61,47 +59,47 @@ export const TextWrapper = styled.div`
 
 export const TopLine = styled.div`
   color: #01bf71;
-  font-size: 40px;
-  line-height: 16px;
+  font-size: 30px;
+  line-height: 80px;
   font-weight: 700;
   letter-spacing: 1.4px;
   text-transform: uppercase;
   margin-bottom: 34px;
 
   @media screen and (max-width: 768px) {
-    font-size: 23px;
+    font-size: 24px;
     overflow: visible;
-
+    line-height: 20px;
   }
-
 `;
 
 export const Heading = styled.h1`
   margin-bottom: 32px;
   font-size: 48px;
-  line-height: 1.1;
-  font-weight: 600;
-  color: ${({ greenText }) => (greenText ? '#01bf71' : '#010606')};
+  line-height: 120px;
+  font-weight: 800;
+  color: ${({ greenText }) => (greenText ? "#01bf71" : "#010606")};
 
   @media screen and (max-width: 768px) {
     margin-bottom: 15px;
-    font-size: 18px;
+    font-size: 24px;
     overflow: visible;
-
+    line-height: 20px;
+    font-weight: 1100;
   }
-  
 `;
 
 export const Subtitle = styled.p`
   max-width: 440px;
   margin-bottom: 45px;
-  font-size: 18px;
-  line-height: 24px;
-  color: ${({ darkText }) => (darkText ? '#01bf71' : '#01bf71')};
+  font-size: 23px;
+  line-height: 120px;
+  color: ${({ darkText }) => (darkText ? "#01bf71" : "#010606")};
 
   @media screen and (max-width: 768px) {
     font-size: 18px;
     overflow: visible;
+    line-height: 45px;
   }
 `;
 
