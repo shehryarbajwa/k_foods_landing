@@ -1,111 +1,38 @@
-import React from "react";
-import useForm from "./UseForm";
-import eggImage from "../../images/egg.png";
+import React, { useState } from 'react';
+import './Form.css';
+import FormBuy from './FormBuy';
+import FormSuccess from './FormSuccess';
 import {
-  FormListContainer,
-  FormHeading,
-  FormWrapper,
-  FormLabel,
-  FormListWrapper,
-  FontInput,
-  FormButton,
-} from "./FormElements";
+  FormContainer,
+  CloseButton,
+  FormContentLeft,
+  FormImage,
+  FormComponentContainer
+
+} from './FormElements'
+import FarmImage from '../../images/farmland.svg';
 
 const Form = () => {
-  // const { handleChange, handleSubmit, values, errors } = useForm(
-  //   submitForm,
-  //   validate
-  // );
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
+  function submitForm() {
+    setIsSubmitted(true);
+  }
   return (
     <>
-      <p>Why not</p>
-      <FormListContainer>
-        <FormWrapper>
-          <FormHeading>
-            Get started with us today! Create your account by filling out the
-            information below.
-          </FormHeading>
-
-          <FormListWrapper>
-            <FormLabel>Username</FormLabel>
-            <FontInput
-              type="text"
-              name="username"
-              placeholder="Enter your username"
-              value=""
-              // onChange={handleChange}
-            />
-          </FormListWrapper>
-
-          <FormListWrapper>
-            <FormLabel>Username</FormLabel>
-            <FontInput
-              type="text"
-              name="username"
-              placeholder="Enter your username"
-              value=""
-              // onChange={handleChange}
-            />
-          </FormListWrapper>
-          <FormListWrapper>
-            <FormLabel>Username</FormLabel>
-            <FontInput
-              type="text"
-              name="username"
-              placeholder="Enter your order"
-              value=""
-              // onChange={handleChange}
-            />
-          </FormListWrapper>
-          <FormListWrapper>
-            <FormLabel>Username</FormLabel>
-            <FontInput
-              type="text"
-              name="username"
-              placeholder="Enter your order"
-              value=""
-              // onChange={handleChange}
-            />
-          </FormListWrapper>
-          <FormListWrapper>
-            <FormLabel>Username</FormLabel>
-            <FontInput
-              type="text"
-              name="username"
-              placeholder="Enter your order"
-              value=""
-              // onChange={handleChange}
-            />
-          </FormListWrapper>
-          <FormListWrapper>
-            <FormLabel>Username</FormLabel>
-          
-            <FontInput
-              type="text"
-              name="username"
-              placeholder="Enter your order"
-              value=""
-              // onChange={handleChange}
-            />
-          </FormListWrapper>
-          <FormListWrapper>
-            <FormLabel>Username</FormLabel>
-            <FontInput
-              type="text"
-              name="username"
-              placeholder="Enter your username"
-              value=""
-              // onChange={handleChange}
-            />
-          </FormListWrapper>
-          <FormButton type="submit">Submit</FormButton>
-          <label>
-          <input type="radio" name="test" value="small" checked />
-          <img src={eggImage} width="100px" height="100px" />
-          </label>
-        </FormWrapper>
-      </FormListContainer>
+    <FormComponentContainer>
+      <FormContainer>
+        <CloseButton>×</CloseButton>
+        <FormContentLeft>
+          <FormImage src={FarmImage} alt='farmland' />
+        </FormContentLeft>
+        {!isSubmitted ? (
+          <FormBuy submitForm={submitForm} />
+        ) : (
+          <FormSuccess />
+        )}
+      </FormContainer>
+      </FormComponentContainer>
     </>
   );
 };

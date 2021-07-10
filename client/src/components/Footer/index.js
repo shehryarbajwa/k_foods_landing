@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaYoutube,
-  FaTwitter,
-  FaLinkedin,
-} from "react-icons/fa";
+
 import { animateScroll as scroll } from "react-scroll";
 import {
   FooterContainer,
@@ -28,9 +22,9 @@ const Footer = () => {
         <FooterLinksContainer>
           <FooterLinksWrapper>
             <FooterLinkItems>
-              <FooterLink to="/about">کیا ہے منڈی</FooterLink>
-              <FooterLink to="/buy">خریدیں</FooterLink>
-              <FooterLink to="/sell">فروخت</FooterLink>
+              <FooterLink to="/about" onClick={toggleHome}>کیا ہے منڈی</FooterLink>
+              <FooterLink to="/buy" onClick={toggleHome}>خریدیں</FooterLink>
+              <FooterLink to="/sell" onClick={toggleHome}>فروخت</FooterLink>
               <WebsiteRights> All rights reserved © منڈی </WebsiteRights>
             </FooterLinkItems>
           </FooterLinksWrapper>

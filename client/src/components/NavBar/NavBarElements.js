@@ -75,7 +75,7 @@ export const NavItem = styled.li`
     height: 80px
 `
 
-export const NavLinks = styled(LinkScroll)`
+export const NavLinks = styled(LinkReact)`
     color: #161717;
     display: flex;
     align-items: center;
@@ -85,7 +85,8 @@ export const NavLinks = styled(LinkScroll)`
     cursor: pointer;
 
     &.active {
-        border-bottom: 3px solid #01bf71
+        color: blue;
+        border-bottom: 3px solid #01bf71;
     }
 `
 

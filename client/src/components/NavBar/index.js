@@ -1,5 +1,6 @@
 import React from "react";
 import { FaBars } from "react-icons/fa";
+import { animateScroll as scroll } from "react-scroll";
 
 import {
   Nav,
@@ -14,6 +15,10 @@ import {
 } from "./NavBarElements";
 
 const NavBar = ({ click }) => {
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <>
       <Nav>
@@ -24,16 +29,16 @@ const NavBar = ({ click }) => {
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks to="home">منڈی</NavLinks>
+              <NavLinks to="/">منڈی</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="about">کیا ہے منڈی</NavLinks>
+              <NavLinks to="/about">کیا ہے منڈی</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="buy">خریدیں</NavLinks>
+              <NavLinks to="/buy" onClick={toggleHome}>خریدیں</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="sell">فروخت</NavLinks>
+              <NavLinks to="/sell" onClick={toggleHome}>فروخت</NavLinks>
             </NavItem>
           </NavMenu>
         </NavbarContainer>
