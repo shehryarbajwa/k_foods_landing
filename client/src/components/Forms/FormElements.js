@@ -143,3 +143,13 @@ export const FormComponentContainer = styled.div`
   font-family: 'Noto Nastaliq Urdu',
   sans-serif;
 `
+
+export const TextArea = styled.textarea`
+  display: block;
+  padding-left: 10px;
+  outline: none;
+  border-radius: 2px;
+  height: 100px;
+  width: 100%;
+  border: none;
+`

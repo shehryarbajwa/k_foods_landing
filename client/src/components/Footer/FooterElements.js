@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 export const FooterContainer = styled.footer`
   background-color: #56b87c;
-  
 `;
 
 export const FooterWrap = styled.div`
@@ -15,10 +14,10 @@ export const FooterWrap = styled.div`
 `;
 
 export const FooterLinksContainer = styled.div`
-    display:inline-block;
-    line-height: 2.5;
-    text-decoration: none;
-    color:  inherit;
+  display: inline-block;
+  line-height: 2.5;
+  text-decoration: none;
+  color: inherit;
 `;
 
 export const FooterLinksWrapper = styled.div`
@@ -38,14 +37,12 @@ export const FooterLinkItems = styled.div`
     overflow: visible;
   }
 
-  @media screen and (min-width: 1024px) and (max-width: 1280px) { 
+  @media screen and (min-width: 1024px) and (max-width: 1280px) {
     text-decoration: none;
     margin: 100px;
     font-size: 22px;
- }
+  }
 `;
-
-
 
 export const FooterLink = styled(Link)`
   color: #fff;
@@ -60,13 +57,13 @@ export const FooterLink = styled(Link)`
     transition: 0.3s ease-out;
   }
 
-  @media all and (max-width: 480px) { 
+  @media all and (max-width: 480px) {
     margin: 5px;
     font-size: 13px;
     width: 90%;
   }
 
-  @media screen and (min-width: 480px) and (max-width: 768px) { 
+  @media screen and (min-width: 480px) and (max-width: 768px) {
     margin: 5px;
     font-size: 16px;
     font-weight: bold;
@@ -75,17 +72,13 @@ export const FooterLink = styled(Link)`
   }
 `;
 
-
-
-
 export const WebsiteRights = styled.small`
   color: #fff;
   font-size: 15px;
 
-  @media all and (max-width: 480px) { 
+  @media all and (max-width: 480px) {
     margin: 5px;
     font-size: 10px;
     width: 90%;
   }
-
 `;

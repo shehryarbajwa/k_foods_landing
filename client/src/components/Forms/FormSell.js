@@ -21,7 +21,7 @@ const FormBuy = ({ submitForm }) => {
     <>
       <FormListContainer>
         <FormWrapper onSubmit={submitForm}>
-          <FormHeading>منڈی سے خریدیں</FormHeading>
+          <FormHeading>منڈی پر فروخت</FormHeading>
 
           <FormListWrapper>
             <FormLabel> نام </FormLabel>
@@ -66,11 +66,12 @@ const FormBuy = ({ submitForm }) => {
             />
           </FormListWrapper>
           <FormListWrapper>
-            <FormLabel> آپ کیا خرید رہے ہو </FormLabel>
+            <FormLabel> اپنی زمین کا سائز درج کریں
+ </FormLabel>
             <FormInput
-              type="text"
+              type="size"
               name="product"
-              placeholder=""
+              placeholder="اپنی زمین کا سائز درج کریں"
               value=""
               // onChange={handleChange}
             />

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './Form.css';
 import FormBuy from './FormBuy';
 import FormSuccess from './FormSuccess';
 import {

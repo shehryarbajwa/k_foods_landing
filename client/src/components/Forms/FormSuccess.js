@@ -1,5 +1,4 @@
 import React from "react";
-import "./Form.css";
 import { FormListContainer, FormSuccessful, FormImage2 } from "./FormElements";
 import Handshake from "../../images/handshake.png";
 

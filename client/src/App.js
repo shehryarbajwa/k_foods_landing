@@ -5,7 +5,7 @@ import BuyPage from "./pages/BuyPage";
 import SellPage from "./pages/SellPage";
 import NavBar from "./components/NavBar/index";
 import Footer from "./components/Footer/index";
-import Form from "./components/Forms/Form";
+import FormBuy from "./components/Forms/FormBuy";
 import AboutPage  from "./pages/AboutPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -16,7 +16,7 @@ function App() {
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/about" component={AboutPage} exact />
-        <Route path="/buy" component={Form} exact />
+        <Route path="/buy" component={BuyPage} exact />
         <Route path="/sell" component={SellPage} exact />
       </Switch>
       <Footer />
