@@ -12,6 +12,8 @@ export const FormContainer = styled.div`
   height: 1150px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+
 `;
 
 export const FormListContainer = styled.div`
@@ -39,7 +41,20 @@ export const FormListWrapper = styled.div`
 `;
 
 export const FormHeading = styled.h3`
-    
+@media screen and (max-width: 768px) {
+  height: 100px;
+  width: 80%;
+}
+
+@media screen and (max-width: 480px) {
+  height: 100px;
+  width: 80%;
+}
+
+@media screen and (max-width: 375px) {
+  height: 50px;
+  width: 70%;
+}
 `;
 
 export const InputWrapper = styled.input``;
@@ -50,6 +65,8 @@ export const FormLabel = styled.label`
   margin-bottom: 6px;
   color: black;
   margin-right: 12px;
+
+  
 `;
 
 export const FormInput = styled.input`
@@ -60,10 +77,30 @@ export const FormInput = styled.input`
   height: 50px;
   width: 100%;
   border: none;
+
+  @media screen and (max-width: 768px) {
+    height: 50px;
+    width: 80%;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 50px;
+    width: 80%;
+  }
+
+  @media screen and (max-width: 414px) {
+    height: 50px;
+    width: 65%;
+  }
+
+  @media screen and (max-width: 375px) {
+    height: 50px;
+    width: 55%;
+  }
 `;
 
 export const FormButton = styled.button`
-width: 80%;
+  width: 80%;
   height: 50px;
   margin-top: 10px;
   border-radius: 2px;
@@ -85,12 +122,61 @@ width: 80%;
     background: #203826;
     transition: all 0.4s ease-out;
 }
+
+@media screen and (max-width: 768px) {
+  height: 50px;
+  width: 60%;
+}
+
+@media screen and (max-width: 480px) {
+  height: 50px;
+  width: 60%;
+}
+
+@media screen and (max-width: 414px) {
+  height: 50px;
+  width: 60%;
+}
+
+@media screen and (max-width: 414px) {
+  height: 60px;
+  width: -50%;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-left: -60px;
+  margin-right: 100px;
+}
+
+@media screen and (max-width: 375px) {
+  height: 60px;
+  width: -50%;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-left: -120px;
+  margin-right: 100px;
+}
+
+@media screen and (max-width: 500px) { 
+  margin-left: -50px;
+  margin-right: 50px; 
+  width: 65%;
+}
 `;
 
 export const FormContentLeft = styled.div`
   background: white;
   border-radius: 15px 0px 0 15px;
   position: relative;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
 `
 
 export const CloseButton = styled.span`
@@ -152,6 +238,26 @@ export const TextArea = styled.textarea`
   height: 100px;
   width: 100%;
   border: none;
+
+  @media screen and (max-width: 768px) {
+    height: 50px;
+    width: 80%;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 50px;
+    width: 80%;
+  }
+
+  @media screen and (max-width: 375px) {
+    height: 50px;
+    width: 55%;
+  }
+
+  @media screen and (max-width: 414px) {
+    height: 50px;
+    width: 65%;
+  }
 `
 
 export const ErrorMessage = styled.div`
