@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import useForm from "./UseForm";
+import validate from './validateInfo'
 import {
   FormListContainer,
   FormHeading,
@@ -9,18 +10,19 @@ import {
   FormInput,
   FormButton,
   TextArea,
+  ErrorMessage
 } from "./FormElements";
 
 const FormBuy = ({ submitForm }) => {
-  // const { handleChange, handleSubmit, values, errors } = useForm(
-  //   submitForm,
-  //   validate
-  // );
+  const { handleChange, handleSubmit, values, errors } = useForm(
+    submitForm,
+    validate
+  );
 
   return (
     <>
       <FormListContainer>
-        <FormWrapper onSubmit={submitForm}>
+        <FormWrapper onSubmit={handleSubmit}>
           <FormHeading>منڈی پر فروخت</FormHeading>
 
           <FormListWrapper>
@@ -29,10 +31,14 @@ const FormBuy = ({ submitForm }) => {
               type="text"
               name="name"
               placeholder="اپنا نام درج کریں"
-              value=""
-              // onChange={handleChange}
+              value={values.name}
+              onChange={handleChange}
             />
+            <ErrorMessage>
+            {errors.name && <p>{errors.name}</p>}
+            </ErrorMessage>
           </FormListWrapper>
+          
 
           <FormListWrapper>
             <FormLabel> اپنا ٹیلیفون نمبر درج کریں</FormLabel>
@@ -40,9 +46,12 @@ const FormBuy = ({ submitForm }) => {
               type="text"
               name="contact_number"
               placeholder="ٹیلیفون نمبر"
-              value=""
-              // onChange={handleChange}
+              value={values.contact_number}
+              onChange={handleChange}
             />
+            <ErrorMessage>
+            {errors.contact_number && <p>{errors.contact_number}</p>}
+            </ErrorMessage>
           </FormListWrapper>
           <FormListWrapper>
             <FormLabel> آپ کا پتہ </FormLabel>
@@ -51,19 +60,25 @@ const FormBuy = ({ submitForm }) => {
               name="address"
               placeholder="اپنا پتہ درج کریں
               "
-              value=""
-              // onChange={handleChange}
+              value={values.address}
+              onChange={handleChange}
             />
+            <ErrorMessage>
+            {errors.address && <p>{errors.address}</p>}
+            </ErrorMessage>
           </FormListWrapper>
           <FormListWrapper>
             <FormLabel> آپ کا صوبہ کیا ہے؟</FormLabel>
             <FormInput
               type="text"
-              name="username"
+              name="landsize"
               placeholder=" صوبہ"
-              value=""
-              // onChange={handleChange}
+              value={values.province}
+              onChange={handleChange}
             />
+            <ErrorMessage>
+            {errors.province && <p>{errors.province}</p>}
+            </ErrorMessage>
           </FormListWrapper>
           <FormListWrapper>
             <FormLabel> اپنی زمین کا سائز درج کریں
@@ -72,8 +87,8 @@ const FormBuy = ({ submitForm }) => {
               type="size"
               name="product"
               placeholder="اپنی زمین کا سائز درج کریں"
-              value=""
-              // onChange={handleChange}
+              value={values.product}
+              onChange={handleChange}
             />
           </FormListWrapper>
           <FormListWrapper>
@@ -82,6 +97,7 @@ const FormBuy = ({ submitForm }) => {
               type="text"
               placeholder="اپنی تجاویز درج کریں
             "
+            value={values.textarea}
             ></TextArea>
           </FormListWrapper>
           <FormButton type="submit">Submit</FormButton>

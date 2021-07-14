@@ -10,6 +10,7 @@ import {
   FormInput,
   FormButton,
   TextArea,
+  ErrorMessage
 } from "./FormElements";
 
 const FormBuy = ({ submitForm }) => {
@@ -33,7 +34,9 @@ const FormBuy = ({ submitForm }) => {
               value={values.name}
               onChange={handleChange}
             />
+            <ErrorMessage>
             {errors.name && <p>{errors.name}</p>}
+            </ErrorMessage>
           </FormListWrapper>
 
           <FormListWrapper>
@@ -45,7 +48,9 @@ const FormBuy = ({ submitForm }) => {
               value={values.contact_number}
               onChange={handleChange}
             />
+           <ErrorMessage>
             {errors.contact_number && <p>{errors.contact_number}</p>}
+            </ErrorMessage>
           </FormListWrapper>
           <FormListWrapper>
             <FormLabel> آپ کا پتہ </FormLabel>
@@ -57,7 +62,9 @@ const FormBuy = ({ submitForm }) => {
               value={values.address}
               onChange={handleChange}
             />
+            <ErrorMessage>
             {errors.address && <p>{errors.address}</p>}
+            </ErrorMessage>
           </FormListWrapper>
           <FormListWrapper>
             <FormLabel> آپ کا صوبہ کیا ہے؟</FormLabel>
@@ -68,7 +75,9 @@ const FormBuy = ({ submitForm }) => {
               value={values.province}
               onChange={handleChange}
             />
+            <ErrorMessage>
             {errors.province && <p>{errors.province}</p>}
+            </ErrorMessage>
           </FormListWrapper>
           <FormListWrapper>
             <FormLabel> آپ کیا خرید رہے ہو </FormLabel>
@@ -79,7 +88,9 @@ const FormBuy = ({ submitForm }) => {
               value={values.product}
               onChange={handleChange}
             />
+            <ErrorMessage>
             {errors.product && <p>{errors.product}</p>}
+            </ErrorMessage>
           </FormListWrapper>
           <FormListWrapper>
             <FormLabel>کیا آپ کچھ اور شامل کرنا پسند کریں گے؟</FormLabel>

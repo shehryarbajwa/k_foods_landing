@@ -9,7 +9,7 @@ export const FormContainer = styled.div`
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
   position: relative;
   border-radius: 10px;
-  height: 1000px;
+  height: 1150px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 `;
@@ -82,7 +82,7 @@ width: 80%;
   
   &:hover{
     cursor: pointer;
-    background: #e3fcec;
+    background: #203826;
     transition: all 0.4s ease-out;
 }
 `;
@@ -152,4 +152,8 @@ export const TextArea = styled.textarea`
   height: 100px;
   width: 100%;
   border: none;
+`
+
+export const ErrorMessage = styled.div`
+  color: red;
 `
