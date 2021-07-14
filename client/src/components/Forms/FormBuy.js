@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import useForm from "./UseForm";
+import validate from "./validateInfo";
 import {
   FormListContainer,
   FormHeading,
@@ -12,15 +13,15 @@ import {
 } from "./FormElements";
 
 const FormBuy = ({ submitForm }) => {
-  // const { handleChange, handleSubmit, values, errors } = useForm(
-  //   submitForm,
-  //   validate
-  // );
+  const { handleChange, handleSubmit, values, errors } = useForm(
+    submitForm,
+    validate
+  );
 
   return (
     <>
       <FormListContainer>
-        <FormWrapper onSubmit={submitForm}>
+        <FormWrapper onSubmit={handleSubmit}>
           <FormHeading>منڈی سے خریدیں</FormHeading>
 
           <FormListWrapper>
@@ -29,9 +30,10 @@ const FormBuy = ({ submitForm }) => {
               type="text"
               name="name"
               placeholder="اپنا نام درج کریں"
-              value=""
-              // onChange={handleChange}
+              value={values.name}
+              onChange={handleChange}
             />
+            {errors.name && <p>{errors.name}</p>}
           </FormListWrapper>
 
           <FormListWrapper>
@@ -40,9 +42,10 @@ const FormBuy = ({ submitForm }) => {
               type="text"
               name="contact_number"
               placeholder="ٹیلیفون نمبر"
-              value=""
-              // onChange={handleChange}
+              value={values.contact_number}
+              onChange={handleChange}
             />
+            {errors.contact_number && <p>{errors.contact_number}</p>}
           </FormListWrapper>
           <FormListWrapper>
             <FormLabel> آپ کا پتہ </FormLabel>
@@ -51,19 +54,21 @@ const FormBuy = ({ submitForm }) => {
               name="address"
               placeholder="اپنا پتہ درج کریں
               "
-              value=""
-              // onChange={handleChange}
+              value={values.address}
+              onChange={handleChange}
             />
+            {errors.address && <p>{errors.address}</p>}
           </FormListWrapper>
           <FormListWrapper>
             <FormLabel> آپ کا صوبہ کیا ہے؟</FormLabel>
             <FormInput
               type="text"
-              name="username"
+              name="province"
               placeholder=" صوبہ"
-              value=""
-              // onChange={handleChange}
+              value={values.province}
+              onChange={handleChange}
             />
+            {errors.province && <p>{errors.province}</p>}
           </FormListWrapper>
           <FormListWrapper>
             <FormLabel> آپ کیا خرید رہے ہو </FormLabel>
@@ -71,16 +76,19 @@ const FormBuy = ({ submitForm }) => {
               type="text"
               name="product"
               placeholder=""
-              value=""
-              // onChange={handleChange}
+              value={values.product}
+              onChange={handleChange}
             />
+            {errors.product && <p>{errors.product}</p>}
           </FormListWrapper>
           <FormListWrapper>
             <FormLabel>کیا آپ کچھ اور شامل کرنا پسند کریں گے؟</FormLabel>
             <TextArea
               type="text"
+              name="textarea"
               placeholder="اپنی تجاویز درج کریں
             "
+              value={values.textarea}
             ></TextArea>
           </FormListWrapper>
           <FormButton type="submit">Submit</FormButton>
