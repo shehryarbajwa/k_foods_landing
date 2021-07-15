@@ -166,7 +166,7 @@ export const FormButton = styled.button`
 `;
 
 export const FormContentLeft = styled.div`
-  background: white;
+  background: #e3fcec;
   border-radius: 15px 0px 0 15px;
   position: relative;
 

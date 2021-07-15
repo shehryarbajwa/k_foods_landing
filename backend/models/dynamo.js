@@ -19,7 +19,7 @@ const getOrders = async () => {
     return orders
 }
 
-const addOrUpdateOrder = async (order) => {
+const addOrUpdateBuyOrder = async (order) => {
     const params = {
         TableName: process.env.TABLE_NAME_BUYER,
         Item: order
@@ -28,21 +28,21 @@ const addOrUpdateOrder = async (order) => {
     return await dynamoClient.put(params).promise()
 }
 
-const getOrderById = async (id) => {
+const getBuyOrderById = async (user_id) => {
     const params = {
         TableName: process.env.TABLE_NAME_BUYER,
         Key: {
-            id
+            user_id,
         }
     }
     return await dynamoClient.put(params).promise()
 }
 
-const deleteOrder = async (id) => {
+const deleteOrder = async (order_id) => {
     const params = {
         TableName: process.env.TABLE_NAME_BUYER,
         Key: {
-            id
+            order_id
         }
     }
     return await dynamoClient.delete(params).promise()
@@ -67,21 +67,21 @@ const addOrUpdateFarmer = async (order) => {
     return await dynamoClient.put(params).promise()
 }
 
-const getFarmerById = async (id) => {
+const getFarmerById = async (farmer_id) => {
     const params = {
         TableName: process.env.TABLE_NAME_FARMER,
         Key: {
-            id
+            farmer_id
         }
     }
     return await dynamoClient.put(params).promise()
 }
 
-const deleteFarmer = async (id) => {
+const deleteFarmer = async (farmer_id) => {
     const params = {
         TableName: process.env.TABLE_NAME_FARMER,
         Key: {
-            id
+            farmer_id
         }
     }
     return await dynamoClient.delete(params).promise()
@@ -90,8 +90,8 @@ const deleteFarmer = async (id) => {
 module.exports = {
     dynamoClient,
     getOrders,
-    addOrUpdateOrder,
-    getOrderById,
+    addOrUpdateBuyOrder,
+    getBuyOrderById,
     deleteOrder,
     getFarmer,
     getFarmerById,

@@ -9,7 +9,7 @@ import {
   FormComponentContainer
 
 } from './FormElements'
-import FarmImage from '../../images/farmland.svg';
+import FarmerImage from '../../images/farmer.jpg';
 
 const Form = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -23,7 +23,7 @@ const Form = () => {
       <FormContainer>
         <CloseButton>×</CloseButton>
         <FormContentLeft>
-          <FormImage src={FarmImage} alt='farmland' />
+          <FormImage src={FarmerImage} alt='Farmer' />
         </FormContentLeft>
         {!isSubmitted ? (
           <FormBuy submitForm={submitForm} />

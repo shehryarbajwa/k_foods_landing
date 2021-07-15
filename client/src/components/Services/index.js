@@ -23,20 +23,20 @@ const Services = () => {
           <ServicesIcon src={Icon1} />
           <ServicesH2>کیا ہے منڈی</ServicesH2>
           <ServicesList>
-          <ServicesItem>کیا ہے منڈی</ServicesItem>
-          <ServicesItem>کیا ہے منڈی</ServicesItem>
-          <ServicesItem>کیا ہے منڈی</ServicesItem>
-          <ServicesItem>کیا ہے منڈی</ServicesItem>
+            <ServicesItem>کیا ہے منڈی</ServicesItem>
+            <ServicesItem>کیا ہے منڈی</ServicesItem>
+            <ServicesItem>کیا ہے منڈی</ServicesItem>
+            <ServicesItem>کیا ہے منڈی</ServicesItem>
           </ServicesList>
         </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon2} />
           <ServicesH2>کیا ہے منڈی</ServicesH2>
           <ServicesList>
-          <ServicesItem>کیا ہے منڈی</ServicesItem>
-          <ServicesItem>کیا ہے منڈی</ServicesItem>
-          <ServicesItem>کیا ہے منڈی</ServicesItem>
-          <ServicesItem>کیا ہے منڈی</ServicesItem>
+            <ServicesItem>کیا ہے منڈی</ServicesItem>
+            <ServicesItem>کیا ہے منڈی</ServicesItem>
+            <ServicesItem>کیا ہے منڈی</ServicesItem>
+            <ServicesItem>کیا ہے منڈی</ServicesItem>
           </ServicesList>
         </ServicesCard>
         <ServicesCard>

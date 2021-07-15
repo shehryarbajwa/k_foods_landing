@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+
+
 const useForm = (callback, validate) => {
   const [values, setValues] = useState({
     name: "",
@@ -21,7 +23,7 @@ const useForm = (callback, validate) => {
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     setErrors(validate(values));

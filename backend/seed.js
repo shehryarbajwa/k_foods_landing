@@ -1,6 +1,6 @@
 const axios = require('axios');
 const uniqid = require('uniqid');
-const {addOrUpdateOrder} = require('./dynamo')
+const {addOrUpdateOrder} = require('./models/dynamo')
 
 // const seedData = async () => {
 //     const order = {
