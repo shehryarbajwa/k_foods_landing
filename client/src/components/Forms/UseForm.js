@@ -9,8 +9,10 @@ const useForm = (callback, validate) => {
     province: "",
     product: "",
     textarea: "",
+    landsize: "",
   });
-  
+
+  const [buy, setBuy] = useState(false);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -22,6 +24,13 @@ const useForm = (callback, validate) => {
       [name]: value,
     });
   };
+
+  const handleBuySubmit = (event) => {
+    event.preventDefault();
+    setBuy(true);
+
+  }
+
 
   const handleSubmit = async (event) => {
     const { name, value } = event.target;
@@ -43,17 +52,29 @@ const useForm = (callback, validate) => {
 
     console.log(data);
 
-    const sendPostRequest = async () => {
-      try {
-        const resp = await axios.post("http://localhost:3000/buy", data);
-        console.log(resp.data);
-      } catch (err) {
-        // Handle Error Here
-        console.error(err);
-      }
-    };
-
-    sendPostRequest();
+    if (buy) {
+      const sendOrderRequest = async () => {
+        try {
+          const resp = await axios.post("http://localhost:3000/buy", data);
+          console.log(resp.data);
+        } catch (err) {
+          // Handle Error Here
+          console.error(err);
+        }
+      };
+      sendOrderRequest();
+    } else {
+      const signupFarmerRequest = async () => {
+        try {
+          const resp = await axios.post("http://localhost:3000/sell", data);
+          console.log(resp.data);
+        } catch (err) {
+          // Handle Error Here
+          console.error(err);
+        }
+      };
+      signupFarmerRequest();
+    }
   };
 
   useEffect(() => {
@@ -62,7 +83,7 @@ const useForm = (callback, validate) => {
     }
   }, [errors]);
 
-  return { handleChange, handleSubmit, values, errors };
+  return { handleChange, handleSubmit, values, errors, handleBuySubmit };
 };
 
 export default useForm;

@@ -17,6 +17,7 @@ const Form = () => {
   function submitForm() {
     setIsSubmitted(true);
   }
+  
   return (
     <>
     <FormComponentContainer>

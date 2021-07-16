@@ -1,27 +1,29 @@
-import React, {useState} from 'react'
-import Sidebar from '../components/Sidebar'
-import HeroSection from '../components/HeroSection'
-import InfoSection from '../components/InfoSection'
-import { homeObjOne, homeObjTwo, homeObjThree } from '../components/InfoSection/Data'
+import React, { useState } from "react";
+import Sidebar from "../components/Sidebar";
+import HeroSection from "../components/HeroSection";
+import InfoSection from "../components/InfoSection";
+import {
+  homeObjOne,
+  homeObjTwo,
+  homeObjThree,
+} from "../components/InfoSection/Data";
 
 const Home = () => {
-    const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
-    const toggle = () => {
-        setIsOpen(!isOpen)
-    }
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
 
-
-    return (
-        <>
-            <Sidebar isOpen={isOpen} toggle={toggle}/>
-            <HeroSection />
-            <InfoSection {...homeObjOne} />
-            <InfoSection {...homeObjTwo} />
-            <InfoSection {...homeObjThree} />
-        </>
-    )
-}
+  return (
+    <>
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <HeroSection />
+      <InfoSection {...homeObjOne} />
+      <InfoSection {...homeObjTwo} />
+      <InfoSection {...homeObjThree} />
+    </>
+  );
+};
 
 export default Home;
-

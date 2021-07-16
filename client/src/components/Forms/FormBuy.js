@@ -14,7 +14,7 @@ import {
 } from "./FormElements";
 
 const FormBuy = ({ submitForm }) => {
-  const { handleChange, handleSubmit, values, errors } = useForm(
+  const { handleChange, handleSubmit, values, errors, handleBuySubmit } = useForm(
     submitForm,
     validate
   );
@@ -22,7 +22,7 @@ const FormBuy = ({ submitForm }) => {
   return (
     <>
       <FormListContainer>
-        <FormWrapper onSubmit={handleSubmit}>
+        <FormWrapper onSubmit={handleSubmit} onTrigger={handleBuySubmit} >
           <FormHeading>منڈی سے خریدیں</FormHeading>
 
           <FormListWrapper>

@@ -143,6 +143,7 @@ export const FormButton = styled.button`
   }
 
   @media screen and (max-width: 500px) {
+    margin-top: 20px;
     margin-left: -120px;
     margin-right: 100px;
     width: 55%;

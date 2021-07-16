@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { MdKeyboardArrowRight, MdArrowForward } from 'react-icons/md';
+import { Link } from "react-router-dom";
 
 export const HeroContainer = styled.div`
   background: #0c0c0c;
