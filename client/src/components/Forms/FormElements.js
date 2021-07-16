@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import LinkScroll from 'react-scroll'
-
-
+import LinkScroll from "react-scroll";
 
 export const FormContainer = styled.div`
   margin: 120px auto;
@@ -12,8 +10,6 @@ export const FormContainer = styled.div`
   height: 1150px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-
-
 `;
 
 export const FormListContainer = styled.div`
@@ -41,20 +37,20 @@ export const FormListWrapper = styled.div`
 `;
 
 export const FormHeading = styled.h3`
-@media screen and (max-width: 768px) {
-  height: 100px;
-  width: 80%;
-}
+  @media screen and (max-width: 768px) {
+    height: 100px;
+    width: 80%;
+  }
 
-@media screen and (max-width: 480px) {
-  height: 100px;
-  width: 80%;
-}
+  @media screen and (max-width: 480px) {
+    height: 100px;
+    width: 80%;
+  }
 
-@media screen and (max-width: 375px) {
-  height: 50px;
-  width: 70%;
-}
+  @media screen and (max-width: 375px) {
+    height: 50px;
+    width: 70%;
+  }
 `;
 
 export const InputWrapper = styled.input``;
@@ -65,8 +61,6 @@ export const FormLabel = styled.label`
   margin-bottom: 6px;
   color: black;
   margin-right: 12px;
-
-  
 `;
 
 export const FormInput = styled.input`
@@ -116,53 +110,43 @@ export const FormButton = styled.button`
   border: none;
   color: #fff;
   font-size: 1rem;
-  
-  &:hover{
+
+  &:hover {
     cursor: pointer;
     background: #203826;
     transition: all 0.4s ease-out;
-}
+  }
 
-@media screen and (max-width: 768px) {
-  height: 50px;
-  width: 60%;
-}
+  @media screen and (max-width: 768px) {
+    height: 50px;
+    width: 60%;
+  }
 
-@media screen and (max-width: 480px) {
-  height: 50px;
-  width: 60%;
-}
+  @media screen and (max-width: 414px) {
+    height: 60px;
+    width: -50%;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: -60px;
+    margin-right: 100px;
+  }
 
-@media screen and (max-width: 414px) {
-  height: 50px;
-  width: 60%;
-}
+  @media screen and (max-width: 375px) {
+    height: 60px;
+    width: 50%;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-left: -120px;
+    margin-right: 100px;
+  }
 
-@media screen and (max-width: 414px) {
-  height: 60px;
-  width: -50%;
-  font-size: 20px;
-  border-radius: 5px;
-  margin-top: 20px;
-  margin-left: -60px;
-  margin-right: 100px;
-}
-
-@media screen and (max-width: 375px) {
-  height: 60px;
-  width: -50%;
-  font-size: 20px;
-  border-radius: 5px;
-  margin-top: 5px;
-  margin-left: -120px;
-  margin-right: 100px;
-}
-
-@media screen and (max-width: 500px) { 
-  margin-left: -50px;
-  margin-right: 50px; 
-  width: 65%;
-}
+  @media screen and (max-width: 500px) {
+    margin-left: -120px;
+    margin-right: 100px;
+    width: 55%;
+  }
 `;
 
 export const FormContentLeft = styled.div`
@@ -177,7 +161,7 @@ export const FormContentLeft = styled.div`
   @media screen and (max-width: 480px) {
     display: none;
   }
-`
+`;
 
 export const CloseButton = styled.span`
   position: absolute;
@@ -187,13 +171,13 @@ export const CloseButton = styled.span`
   z-index: 1;
   color: #fff;
   cursor: pointer;
-`
+`;
 
 export const FormContentRight = styled.div`
   border-radius: 0 10px 10px 0;
   position: relative;
   background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(17, 17, 17) 100%);
-`
+`;
 
 export const FormSuccessful = styled.h1`
   text-align: center;
@@ -201,16 +185,16 @@ export const FormSuccessful = styled.h1`
   margin-top: 80px;
   color: black;
   background: #e3fcec;
-`
+`;
 
 export const FormImage2 = styled.img`
-    width: 60%;
-    height: 60%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-`
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
 
 export const FormImage = styled.img`
   width: 100%;
@@ -219,16 +203,15 @@ export const FormImage = styled.img`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-`
+`;
 
 export const FormComponentContainer = styled.div`
   box-sizing: border-box;
   background: #e3fcec;
   margin: 0;
   padding: 0;
-  font-family: 'Noto Nastaliq Urdu',
-  sans-serif;
-`
+  font-family: "Noto Nastaliq Urdu", sans-serif;
+`;
 
 export const TextArea = styled.textarea`
   display: block;
@@ -258,8 +241,13 @@ export const TextArea = styled.textarea`
     height: 50px;
     width: 65%;
   }
-`
+
+  @media screen and (max-width: 500px) {
+    height: 50px;
+    width: 55%;
+  }
+`;
 
 export const ErrorMessage = styled.div`
   color: red;
-`
+`;

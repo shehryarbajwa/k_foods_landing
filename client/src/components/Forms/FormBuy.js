@@ -10,7 +10,7 @@ import {
   FormInput,
   FormButton,
   TextArea,
-  ErrorMessage
+  ErrorMessage,
 } from "./FormElements";
 
 const FormBuy = ({ submitForm }) => {
@@ -34,9 +34,7 @@ const FormBuy = ({ submitForm }) => {
               value={values.name}
               onChange={handleChange}
             />
-            <ErrorMessage>
-            {errors.name && <p>{errors.name}</p>}
-            </ErrorMessage>
+            <ErrorMessage>{errors.name && <p>{errors.name}</p>}</ErrorMessage>
           </FormListWrapper>
 
           <FormListWrapper>
@@ -48,8 +46,8 @@ const FormBuy = ({ submitForm }) => {
               value={values.contact_number}
               onChange={handleChange}
             />
-           <ErrorMessage>
-            {errors.contact_number && <p>{errors.contact_number}</p>}
+            <ErrorMessage>
+              {errors.contact_number && <p>{errors.contact_number}</p>}
             </ErrorMessage>
           </FormListWrapper>
           <FormListWrapper>
@@ -63,7 +61,7 @@ const FormBuy = ({ submitForm }) => {
               onChange={handleChange}
             />
             <ErrorMessage>
-            {errors.address && <p>{errors.address}</p>}
+              {errors.address && <p>{errors.address}</p>}
             </ErrorMessage>
           </FormListWrapper>
           <FormListWrapper>
@@ -76,7 +74,7 @@ const FormBuy = ({ submitForm }) => {
               onChange={handleChange}
             />
             <ErrorMessage>
-            {errors.province && <p>{errors.province}</p>}
+              {errors.province && <p>{errors.province}</p>}
             </ErrorMessage>
           </FormListWrapper>
           <FormListWrapper>
@@ -89,7 +87,7 @@ const FormBuy = ({ submitForm }) => {
               onChange={handleChange}
             />
             <ErrorMessage>
-            {errors.product && <p>{errors.product}</p>}
+              {errors.product && <p>{errors.product}</p>}
             </ErrorMessage>
           </FormListWrapper>
           <FormListWrapper>
@@ -97,9 +95,9 @@ const FormBuy = ({ submitForm }) => {
             <TextArea
               type="text"
               name="textarea"
-              placeholder="اپنی تجاویز درج کریں
-            "
+              placeholder="اپنی تجاویز درج کریں"
               value={values.textarea}
+              onChange={handleChange}
             ></TextArea>
           </FormListWrapper>
           <FormButton type="submit">Submit</FormButton>
