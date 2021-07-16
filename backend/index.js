@@ -3,22 +3,62 @@ const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path");
+const { addOrUpdateFarmer, addOrUpdateBuyOrder } = require("./models/dynamo");
+const Generator = require("id-generator");
+const g = new Generator();
+const moment = require("moment-timezone");
 
-const farmerRouter = require("./api/routes/farmerAPI");
-const buyerRouter = require("./api/routes/buyerAPI");
-const indexAPIRouter = require("./api/routes/index");
+
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname + '/..' + "/client/build")));
+
+app.use(express.static(path.join(__dirname + "/.." + "/client/build")));
 
 app.get("*", (req, res) => {
   const buildPath = path.join(__dirname + "/.." + "/client/build/index.html");
   res.sendFile(buildPath);
 });
 
-app.use("/sell", farmerRouter);
-app.use("/buy", buyerRouter);
+app.post("/buy", async (req, res, next) => {
+  const { name, contact_number, address, province, product, text } = req.body;
+
+  try {
+    await addOrUpdateBuyOrder({
+      id: g.newId(),
+      name: name,
+      contact_number: contact_number,
+      address: address,
+      province: province,
+      product: product,
+      text: text,
+      order_date: moment().tz("Asia/Karachi").format("MMMM Do YYYY"),
+      order_time: moment().tz("Asia/Karachi").format("h:mm:ss a"),
+    });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+app.post("/sell", async (req, res, next) => {
+  const { name, contact_number, address, province, landsize, text } = req.body;
+
+  try {
+    await addOrUpdateFarmer({
+      id: g.newId(),
+      name: name,
+      contact_number: contact_number,
+      address: address,
+      province: province,
+      landsize: landsize,
+      text: text,
+      signup_date: moment().tz("Asia/Karachi").format("MMMM Do YYYY"),
+      signup_time: moment().tz("Asia/Karachi").format("h:mm:ss a"),
+    });
+  } catch (err) {
+    console.log(err);
+  }
+});
 
 const port = process.env.PORT || 3000;
 
