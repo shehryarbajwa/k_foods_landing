@@ -7,8 +7,9 @@ const { addOrUpdateFarmer, addOrUpdateBuyOrder } = require("./models/dynamo");
 const Generator = require("id-generator");
 const g = new Generator();
 const moment = require("moment-timezone");
-
-
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio')(accountSid, authToken);
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -35,6 +36,15 @@ app.post("/buy", async (req, res, next) => {
       order_date: moment().tz("Asia/Karachi").format("MMMM Do YYYY"),
       order_time: moment().tz("Asia/Karachi").format("h:mm:ss a"),
     });
+    client.messages
+      .create({
+        to: '+923218609999',
+        from: '+18727048669',
+        body: 'This is the ship that made the Kessel Run in fourteen parsecs?',
+      })
+      .then(message => console.log(message.sid));
+    
+    res.send("Success");
   } catch (err) {
     console.log(err);
   }
@@ -53,8 +63,15 @@ app.post("/sell", async (req, res, next) => {
       landsize: landsize,
       text: text,
       signup_date: moment().tz("Asia/Karachi").format("MMMM Do YYYY"),
-      signup_time: moment().tz("Asia/Karachi").format("h:mm:ss a"),
+      signup_time: moment().tz("Asia/Karachi").format("h:mm:ss a")
     });
+    client.messages
+      .create({
+        to: '+923218609999',
+        from: '+18727048669',
+        body: 'This is the ship that made the Kessel Run in fourteen parsecs?',
+      })
+      .then(message => console.log(message.sid));
   } catch (err) {
     console.log(err);
   }
