@@ -23,7 +23,7 @@ app.get("*", (req, res) => {
 
 app.post("/buy", async (req, res, next) => {
   const { name, contact_number, address, province, product, text } = req.body;
-
+  const trimContactNumber = contact_number.toString().slice(1);
   try {
     await addOrUpdateBuyOrder({
       id: g.newId(),
@@ -38,9 +38,9 @@ app.post("/buy", async (req, res, next) => {
     });
     client.messages
       .create({
-        to: '+923218609999',
+        to: '+92' + trimContactNumber,
         from: '+18727048669',
-        body: 'This is the ship that made the Kessel Run in fourteen parsecs?',
+        body: 'ہمیں آپ کا آرڈر مل گیا ہے۔ ہمارا نمائندہ جلد ہی آپ سے رابطہ کرے گا',
       })
       .then(message => console.log(message.sid));
     
@@ -52,6 +52,8 @@ app.post("/buy", async (req, res, next) => {
 
 app.post("/sell", async (req, res, next) => {
   const { name, contact_number, address, province, landsize, text } = req.body;
+  const trimContactNumber = contact_number.toString().slice(1);
+  
 
   try {
     await addOrUpdateFarmer({
@@ -65,11 +67,13 @@ app.post("/sell", async (req, res, next) => {
       signup_date: moment().tz("Asia/Karachi").format("MMMM Do YYYY"),
       signup_time: moment().tz("Asia/Karachi").format("h:mm:ss a")
     });
+
+    
     client.messages
       .create({
-        to: '+923218609999',
+        to: '+92' + trimContactNumber,
         from: '+18727048669',
-        body: 'This is the ship that made the Kessel Run in fourteen parsecs?',
+        body: 'ہمیں آپ کا آرڈر مل گیا ہے۔ ہمارا نمائندہ جلد ہی آپ سے رابطہ کرے گا',
       })
       .then(message => console.log(message.sid));
   } catch (err) {
