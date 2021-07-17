@@ -12,7 +12,6 @@ import {
   ArrowRight,
 } from "./HeroElements";
 import Button from "../ButtonElement";
-import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
@@ -34,10 +33,10 @@ const HeroSection = () => {
           منڈی کسانوں کو سیدھا خریداروں ریسٹورنٹوں اور سہولت کاروں کے ساتھ ملا
           کر پاکستان کے کسانوں اور سہولت کاروں کے ایک اہم مسئلے کو حل کر رہی ہے۔
         </HeroP>
-        <HeroBtnWrapper >
+        <HeroBtnWrapper>
           <Button
-            onMouseEnter={hover}
-            onMouseLeave={hover}
+            onMouseEnter={onHover}
+            onMouseLeave={onHover}
             primary="true"
             big="true"
             onClick={(e) => {

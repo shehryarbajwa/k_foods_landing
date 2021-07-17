@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { FaBars } from "react-icons/fa";
 import { animateScroll as scroll } from "react-scroll";
 
@@ -14,7 +14,21 @@ import {
   NavBtnLink,
 } from "./NavBarElements";
 
-const NavBar = ({ click }) => {
+const NavBar = ({ toggle }) => {
+  const [scrollNav, setScrollNav] = useState(false);
+
+  const changeNav = () => {
+    if (window.scrollY >= 80) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', changeNav);
+  }, []);
+
   const toggleHome = () => {
     scroll.scrollToTop();
   };
@@ -24,7 +38,7 @@ const NavBar = ({ click }) => {
       <Nav>
         <NavbarContainer>
           <NavLogo to="/">منڈی</NavLogo>
-          <MobileIcon onClick={click}>
+          <MobileIcon onClick={toggle}>
             <FaBars />
           </MobileIcon>
           <NavMenu>

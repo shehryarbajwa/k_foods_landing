@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Sidebar from "../components/Sidebar";
 import FormSellHelper from "../components/Forms/FormSellHelper";
 
 const SellPage = () => {
@@ -11,7 +10,6 @@ const SellPage = () => {
   
     return (
       <>
-        <Sidebar isOpen={isOpen} toggle={toggle} />
         <FormSellHelper />
       </>
     );

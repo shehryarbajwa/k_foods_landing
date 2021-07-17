@@ -79,7 +79,7 @@ export const FormInput = styled.input`
 
   @media screen and (max-width: 480px) {
     height: 50px;
-    width: 80%;
+    width: 70%;
   }
 
   @media screen and (max-width: 414px) {
@@ -94,9 +94,10 @@ export const FormInput = styled.input`
 `;
 
 export const FormButton = styled.button`
-  width: 80%;
+  width: 50%;
   height: 50px;
   margin-top: 10px;
+  
   border-radius: 2px;
   background: rgb(116, 203, 160);
   background: linear-gradient(
@@ -106,7 +107,7 @@ export const FormButton = styled.button`
     rgba(60, 218, 120, 1) 42%,
     rgba(58, 139, 99, 1) 79%
   );
-  outline: none;
+  
   border: none;
   color: #fff;
   font-size: 1rem;
@@ -118,35 +119,40 @@ export const FormButton = styled.button`
   }
 
   @media screen and (max-width: 768px) {
-    height: 50px;
-    width: 60%;
+    height: 60px;
+    width: 75%;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 90px;
+    margin-right: 90px;
   }
 
   @media screen and (max-width: 414px) {
     height: 60px;
-    width: -50%;
+    width: 30%;
     font-size: 20px;
     border-radius: 5px;
     margin-top: 20px;
-    margin-left: -60px;
-    margin-right: 100px;
+    margin-left: 20px;
+    margin-right: 50px;
   }
 
   @media screen and (max-width: 375px) {
     height: 60px;
-    width: 50%;
+    width: -45%;
     font-size: 20px;
     border-radius: 5px;
-    margin-top: 5px;
-    margin-left: -120px;
-    margin-right: 100px;
+    margin-top: 20px;
+    margin-left: 90px;
+    margin-right: 10px;
   }
 
   @media screen and (max-width: 500px) {
     margin-top: 20px;
-    margin-left: -120px;
-    margin-right: 100px;
-    width: 55%;
+    margin-left: 10px;
+    margin-right: 130px;
+    width: 72%;
   }
 `;
 
@@ -230,12 +236,7 @@ export const TextArea = styled.textarea`
 
   @media screen and (max-width: 480px) {
     height: 50px;
-    width: 80%;
-  }
-
-  @media screen and (max-width: 375px) {
-    height: 50px;
-    width: 55%;
+    width: 70%;
   }
 
   @media screen and (max-width: 414px) {
@@ -243,7 +244,7 @@ export const TextArea = styled.textarea`
     width: 65%;
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 375px) {
     height: 50px;
     width: 55%;
   }

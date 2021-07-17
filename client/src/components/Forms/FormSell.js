@@ -13,7 +13,7 @@ import {
   ErrorMessage,
 } from "./FormElements";
 
-const FormSell = ({ submitForm }) => {
+const FormBuy = ({ submitForm }) => {
   const { handleChange, handleSubmit, values, errors } = useForm(
     submitForm,
     validate
@@ -22,7 +22,7 @@ const FormSell = ({ submitForm }) => {
   return (
     <>
       <FormListContainer>
-        <FormWrapper onSubmit={handleSubmit} >
+        <FormWrapper onSubmit={handleSubmit}>
           <FormHeading>منڈی پر فروخت</FormHeading>
 
           <FormListWrapper>
@@ -68,7 +68,7 @@ const FormSell = ({ submitForm }) => {
             <FormLabel> آپ کا صوبہ کیا ہے؟</FormLabel>
             <FormInput
               type="text"
-              name="province"
+              name="landsize"
               placeholder=" صوبہ"
               value={values.province}
               onChange={handleChange}
@@ -81,9 +81,9 @@ const FormSell = ({ submitForm }) => {
             <FormLabel> اپنی زمین کا سائز درج کریں</FormLabel>
             <FormInput
               type="size"
-              name="landsize"
+              name="product"
               placeholder="اپنی زمین کا سائز درج کریں"
-              value={values.landsize}
+              value={values.product}
               onChange={handleChange}
             />
           </FormListWrapper>
@@ -91,7 +91,6 @@ const FormSell = ({ submitForm }) => {
             <FormLabel>کیا آپ کچھ اور شامل کرنا پسند کریں گے؟</FormLabel>
             <TextArea
               type="text"
-              name="textarea"
               placeholder="اپنی تجاویز درج کریں"
               value={values.textarea}
               onChange={handleChange}
@@ -104,4 +103,4 @@ const FormSell = ({ submitForm }) => {
   );
 };
 
-export default FormSell;
+export default FormBuy;

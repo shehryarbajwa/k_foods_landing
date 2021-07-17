@@ -11,7 +11,6 @@ const BuyPage = () => {
 
   return (
     <>
-      <Sidebar isOpen={isOpen} toggle={toggle} />
       <FormBuyHelper />
     </>
   );
