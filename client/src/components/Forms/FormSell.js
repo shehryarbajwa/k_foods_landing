@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import useForm from "./UseForm";
 import validate from "./validateInfo";
+import axios from "axios";
 import {
   FormListContainer,
   FormHeading,
@@ -13,18 +14,20 @@ import {
   ErrorMessage,
 } from "./FormElements";
 
-const FormBuy = ({ submitForm }) => {
+const FormSell = ({ submitSellForm }) => {
+
   const { handleChange, handleSubmit, values, errors } = useForm(
-    submitForm,
+    submitSellForm,
     validate
   );
+
+  console.log("submitSellForm", submitSellForm);
 
   return (
     <>
       <FormListContainer>
         <FormWrapper onSubmit={handleSubmit}>
           <FormHeading>منڈی پر فروخت</FormHeading>
-
           <FormListWrapper>
             <FormLabel> نام </FormLabel>
             <FormInput
@@ -68,7 +71,7 @@ const FormBuy = ({ submitForm }) => {
             <FormLabel> آپ کا صوبہ کیا ہے؟</FormLabel>
             <FormInput
               type="text"
-              name="landsize"
+              name="province"
               placeholder=" صوبہ"
               value={values.province}
               onChange={handleChange}
@@ -81,9 +84,9 @@ const FormBuy = ({ submitForm }) => {
             <FormLabel> اپنی زمین کا سائز درج کریں</FormLabel>
             <FormInput
               type="size"
-              name="product"
+              name="landsize"
               placeholder="اپنی زمین کا سائز درج کریں"
-              value={values.product}
+              value={values.landsize}
               onChange={handleChange}
             />
           </FormListWrapper>
@@ -91,16 +94,19 @@ const FormBuy = ({ submitForm }) => {
             <FormLabel>کیا آپ کچھ اور شامل کرنا پسند کریں گے؟</FormLabel>
             <TextArea
               type="text"
+              name="textarea"
               placeholder="اپنی تجاویز درج کریں"
               value={values.textarea}
               onChange={handleChange}
             ></TextArea>
           </FormListWrapper>
-          <FormButton type="submit">Submit</FormButton>
+          <FormButton type="submit">
+            Submit
+            </FormButton>
         </FormWrapper>
       </FormListContainer>
     </>
   );
 };
 
-export default FormBuy;
+export default FormSell;

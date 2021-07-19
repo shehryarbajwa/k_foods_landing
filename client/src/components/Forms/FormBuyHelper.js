@@ -15,6 +15,7 @@ const Form = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   function submitForm() {
+    console.log('Buy form submit')
     setIsSubmitted(true);
   }
   

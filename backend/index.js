@@ -1,15 +1,17 @@
+require('dotenv').config();
+
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path");
-const { addOrUpdateFarmer, addOrUpdateBuyOrder } = require("./models/dynamo");
+const { addOrUpdateFarmer, addOrUpdateBuyOrder } = require("./dynamo");
 const Generator = require("id-generator");
 const g = new Generator();
 const moment = require("moment-timezone");
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN;
-const client = require('twilio')(accountSid, authToken);
+// const accountSid = process.env.TWILIO_ACCOUNT_SID;
+// const authToken = process.env.TWILIO_AUTH_TOKEN;
+// const client = require("twilio")(accountSid, authToken);
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -36,14 +38,14 @@ app.post("/buy", async (req, res, next) => {
       order_date: moment().tz("Asia/Karachi").format("MMMM Do YYYY"),
       order_time: moment().tz("Asia/Karachi").format("h:mm:ss a"),
     });
-    client.messages
-      .create({
-        to: '+92' + trimContactNumber,
-        from: '+18727048669',
-        body: 'ہمیں آپ کا آرڈر مل گیا ہے۔ ہمارا نمائندہ جلد ہی آپ سے رابطہ کرے گا',
-      })
-      .then(message => console.log(message.sid));
-    
+    // client.messages
+    //   .create({
+    //     to: "+92" + trimContactNumber,
+    //     from: "+18727048669",
+    //     body: "ہمیں آپ کا آرڈر مل گیا ہے۔ ہمارا نمائندہ جلد ہی آپ سے رابطہ کرے گا",
+    //   })
+    //   .then((message) => console.log(message.sid));
+
     res.send("Success");
   } catch (err) {
     console.log(err);
@@ -53,7 +55,6 @@ app.post("/buy", async (req, res, next) => {
 app.post("/sell", async (req, res, next) => {
   const { name, contact_number, address, province, landsize, text } = req.body;
   const trimContactNumber = contact_number.toString().slice(1);
-  
 
   try {
     await addOrUpdateFarmer({
@@ -65,17 +66,16 @@ app.post("/sell", async (req, res, next) => {
       landsize: landsize,
       text: text,
       signup_date: moment().tz("Asia/Karachi").format("MMMM Do YYYY"),
-      signup_time: moment().tz("Asia/Karachi").format("h:mm:ss a")
+      signup_time: moment().tz("Asia/Karachi").format("h:mm:ss a"),
     });
 
-    
-    client.messages
-      .create({
-        to: '+92' + trimContactNumber,
-        from: '+18727048669',
-        body: 'ہمیں آپ کا آرڈر مل گیا ہے۔ ہمارا نمائندہ جلد ہی آپ سے رابطہ کرے گا',
-      })
-      .then(message => console.log(message.sid));
+    // client.messages
+    //   .create({
+    //     to: "+92" + trimContactNumber,
+    //     from: "+18727048669",
+    //     body: "ہمیں آپ کا آرڈر مل گیا ہے۔ ہمارا نمائندہ جلد ہی آپ سے رابطہ کرے گا",
+    //   })
+    //   .then((message) => console.log(message.sid));
   } catch (err) {
     console.log(err);
   }

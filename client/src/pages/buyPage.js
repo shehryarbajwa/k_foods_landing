@@ -1,13 +1,8 @@
-import React, { useState } from "react";
-import Sidebar from "../components/Sidebar";
+import React from "react";
 import FormBuyHelper from "../components/Forms/FormBuyHelper";
 
 const BuyPage = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
+  
 
   return (
     <>

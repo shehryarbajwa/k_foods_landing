@@ -10,11 +10,12 @@ import {
 } from "./FormElements";
 import Market from "../../images/markets.jpg";
 
-const Form = () => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+const FormSellHelper = () => {
+  const [showSuccess, setShowSuccess] = useState(false);
 
-  function submitForm() {
-    setIsSubmitted(true);
+  const toggleShowSuccess = () => {
+    console.log('show success');
+    setShowSuccess(true);
   }
   return (
     <>
@@ -24,8 +25,8 @@ const Form = () => {
           <FormContentLeft>
             <FormImage src={Market} alt="market" />
           </FormContentLeft>
-          {!isSubmitted ? (
-            <FormSell submitForm={submitForm} />
+          {!showSuccess ? (
+            <FormSell submitSellForm={toggleShowSuccess}/>
           ) : (
             <FormSuccess />
           )}
@@ -35,4 +36,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default FormSellHelper;

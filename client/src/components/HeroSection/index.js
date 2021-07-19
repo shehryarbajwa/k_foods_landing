@@ -41,7 +41,7 @@ const HeroSection = () => {
             big="true"
             onClick={(e) => {
               e.preventDefault();
-              window.location.href = "http://localhost:3000/sell";
+              window.location.href = "https://mandiv1-env.eba-mhqg9vpc.ap-south-1.elasticbeanstalk.com/sell";
             }}
           >
             منڈی پر فروخت

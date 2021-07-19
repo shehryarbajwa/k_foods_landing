@@ -7,14 +7,14 @@ const useForm = (callback, validate) => {
     contact_number: "",
     address: "",
     province: "",
+    landsize: "",
     product: "",
     textarea: "",
-    landsize: "",
   });
 
-  const [buy, setBuy] = useState(false);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [sellSubmit, setSellSubmit] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -25,55 +25,52 @@ const useForm = (callback, validate) => {
     });
   };
 
-  const handleBuySubmit = (event) => {
-    event.preventDefault();
-    setBuy(true);
-
-  }
-
-
   const handleSubmit = async (event) => {
-    const { name, value } = event.target;
-
     event.preventDefault();
 
     setErrors(validate(values));
 
-    setIsSubmitting(true);
-
-    const data = {
-      name: values["name"],
-      contact_number: values["contact_number"],
-      address: values["address"],
-      province: values["province"],
-      product: values["product"],
-      text: values["textarea"],
-    };
-
-    console.log(data);
-
-    if (buy) {
+    if (event.target.action === "http://localhost:3000/buy") {
       const sendOrderRequest = async () => {
+        const data = {
+          name: values["name"],
+          contact_number: values["contact_number"],
+          address: values["address"],
+          province: values["province"],
+          product: values["product"],
+          text: values["textarea"],
+        };
+
         try {
-          const resp = await axios.post("http://localhost:3000/buy", data);
-          console.log(resp.data);
+          await axios.post("http://localhost:3000/buy", data);
+          setIsSubmitting(true);
         } catch (err) {
-          // Handle Error Here
           console.error(err);
         }
       };
       sendOrderRequest();
     } else {
-      const signupFarmerRequest = async () => {
+      const FarmerSignup = async () => {
+        const data = {
+          name: values["name"],
+          contact_number: values["contact_number"],
+          address: values["address"],
+          province: values["province"],
+          landsize: values["landsize"],
+          text: values["textarea"],
+        };
+
         try {
-          const resp = await axios.post("http://localhost:3000/sell", data);
-          console.log(resp.data);
+          await axios.post("http://localhost:3000/sell", data)
+          setSellSubmit(true);
         } catch (err) {
-          // Handle Error Here
           console.error(err);
         }
       };
-      signupFarmerRequest();
+      FarmerSignup();
+      if(errors.length === 0 && sellSubmit) {
+        callback();
+      }
     }
   };
 
@@ -81,9 +78,11 @@ const useForm = (callback, validate) => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       callback();
     }
-  }, [errors]);
 
-  return { handleChange, handleSubmit, values, errors, handleBuySubmit };
+
+  }, [callback, errors, isSubmitting, sellSubmit]);
+
+  return { handleChange, handleSubmit, values, errors };
 };
 
 export default useForm;

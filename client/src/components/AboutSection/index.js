@@ -20,8 +20,7 @@ const About = () => {
         the arteries of Pakistan's economy. What can we do to help them?
       </AboutWrapper>
       <AboutWrapper>
-        Supply Chain and Tech Ninjacart is India's largest fresh produce supply
-        chain company that is solving one of the toughest problems in the world
+        Mandi is solving one of the toughest problems in the world
         through technology. We connect producers of food directly with
         retailers, restaurants, and service providers using in-house
         applications that drive end to end operations. Currently, our Supply

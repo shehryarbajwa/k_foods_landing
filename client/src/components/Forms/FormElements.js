@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import LinkScroll from "react-scroll";
 
 export const FormContainer = styled.div`
   margin: 120px auto;
@@ -30,6 +29,19 @@ export const FormWrapper = styled.form`
   justify-content: center;
   align-items: center;
 `;
+
+export const FormSellWrapper = styled.form`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
 
 export const FormListWrapper = styled.div`
   margin-bottom: 0.5rem;
@@ -97,7 +109,7 @@ export const FormButton = styled.button`
   width: 50%;
   height: 50px;
   margin-top: 10px;
-  
+
   border-radius: 2px;
   background: rgb(116, 203, 160);
   background: linear-gradient(
@@ -107,7 +119,7 @@ export const FormButton = styled.button`
     rgba(60, 218, 120, 1) 42%,
     rgba(58, 139, 99, 1) 79%
   );
-  
+
   border: none;
   color: #fff;
   font-size: 1rem;
@@ -140,12 +152,10 @@ export const FormButton = styled.button`
 
   @media screen and (max-width: 375px) {
     height: 60px;
-    width: -45%;
-    font-size: 20px;
+    width: 45%;
+    font-size: 24px;
     border-radius: 5px;
     margin-top: 20px;
-    margin-left: 90px;
-    margin-right: 10px;
   }
 
   @media screen and (max-width: 500px) {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import useForm from "./UseForm";
 import validate from "./validateInfo";
 import {
@@ -24,7 +24,6 @@ const FormBuy = ({ submitForm }) => {
       <FormListContainer>
         <FormWrapper onSubmit={handleSubmit}>
           <FormHeading>منڈی سے خریدیں</FormHeading>
-
           <FormListWrapper>
             <FormLabel> نام </FormLabel>
             <FormInput
@@ -95,9 +94,9 @@ const FormBuy = ({ submitForm }) => {
             <TextArea
               type="text"
               name="textarea"
-              placeholder="اپنی تجاویز درج کریں
-            "
+              placeholder="اپنی تجاویز درج کریں"
               value={values.textarea}
+              onChange={handleChange}
             ></TextArea>
           </FormListWrapper>
           <FormButton type="submit">Submit</FormButton>
