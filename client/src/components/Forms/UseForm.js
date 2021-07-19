@@ -25,52 +25,51 @@ const useForm = (callback, validate) => {
     });
   };
 
+  const FarmerSignup = async () => {
+    const data = {
+      name: values["name"],
+      contact_number: values["contact_number"],
+      address: values["address"],
+      province: values["province"],
+      landsize: values["landsize"],
+      text: values["textarea"],
+    };
+
+    try {
+      await axios.post("http://localhost:3000/sell", data)
+      .then(setSellSubmit(true));
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const sendOrderRequest = async () => {
+    const data = {
+      name: values["name"],
+      contact_number: values["contact_number"],
+      address: values["address"],
+      province: values["province"],
+      product: values["product"],
+      text: values["textarea"],
+    };
+
+    try {
+      await axios.post("http://localhost:3000/buy", data)
+      .then(setIsSubmitting(true));
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     setErrors(validate(values));
 
     if (event.target.action === "http://localhost:3000/buy") {
-      const sendOrderRequest = async () => {
-        const data = {
-          name: values["name"],
-          contact_number: values["contact_number"],
-          address: values["address"],
-          province: values["province"],
-          product: values["product"],
-          text: values["textarea"],
-        };
-
-        try {
-          await axios.post("http://localhost:3000/buy", data);
-          setIsSubmitting(true);
-        } catch (err) {
-          console.error(err);
-        }
-      };
       sendOrderRequest();
     } else {
-      const FarmerSignup = async () => {
-        const data = {
-          name: values["name"],
-          contact_number: values["contact_number"],
-          address: values["address"],
-          province: values["province"],
-          landsize: values["landsize"],
-          text: values["textarea"],
-        };
-
-        try {
-          await axios.post("http://localhost:3000/sell", data)
-          setSellSubmit(true);
-        } catch (err) {
-          console.error(err);
-        }
-      };
       FarmerSignup();
-      if(errors.length === 0 && sellSubmit) {
-        callback();
-      }
     }
   };
 
@@ -79,8 +78,10 @@ const useForm = (callback, validate) => {
       callback();
     }
 
-
-  }, [callback, errors, isSubmitting, sellSubmit]);
+    if (Object.keys(errors).length === 0 && sellSubmit) {
+      callback();
+    }
+  }, []);
 
   return { handleChange, handleSubmit, values, errors };
 };
