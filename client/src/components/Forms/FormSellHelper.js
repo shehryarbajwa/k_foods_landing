@@ -13,10 +13,6 @@ import Market from "../../images/markets.jpg";
 const FormSellHelper = () => {
   const [showSuccess, setShowSuccess] = useState(false);
 
-  const toggleShowSuccess = () => {
-    console.log('show success');
-    setShowSuccess(true);
-  }
   return (
     <>
       <FormComponentContainer>
@@ -26,7 +22,7 @@ const FormSellHelper = () => {
             <FormImage src={Market} alt="market" />
           </FormContentLeft>
           {!showSuccess ? (
-            <FormSell submitSellForm={toggleShowSuccess}/>
+            <FormSell submitSellForm={() => setShowSuccess(true)}/>
           ) : (
             <FormSuccess />
           )}

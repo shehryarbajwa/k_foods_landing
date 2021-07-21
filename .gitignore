@@ -1,0 +1,4 @@
+/prod-build
+**/node_modules
+/backend/.env
+/client/.env

@@ -73,6 +73,54 @@ export const FormLabel = styled.label`
   margin-bottom: 6px;
   color: black;
   margin-right: 12px;
+
+  @media screen and (max-width: 768px) {
+    height: 50px;
+    width: 80%;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 50px;
+    width: 70%;
+  }
+
+  @media screen and (max-width: 414px) {
+    height: 50px;
+    width: 50%;
+    margin-right: 220px;
+  }
+
+  @media screen and (max-width: 411px) {
+    height: 50px;
+    width: 60%;
+    margin-right: 220px;
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 375px) {
+    height: 50px;
+    width: 50%;
+    margin-right: 220px;
+  }
+
+  @media screen and (max-width: 360px) {
+    height: 50px;
+    width: 50%;
+    margin-right: 260px;
+  }
+
+  @media screen and (max-width: 320px) {
+    height: 50px;
+    width: 40%;
+    margin-right: 300px;
+  }
+  
+  @media screen and (max-width: 280px) {
+    height: 50px;
+    width: 30%;
+    margin-right: 300px;
+    font-size: 18px;
+  }
 `;
 
 export const FormInput = styled.input`
@@ -103,12 +151,27 @@ export const FormInput = styled.input`
     height: 50px;
     width: 55%;
   }
+
+  @media screen and (max-width: 320px) {
+    height: 50px;
+    width: 40%;
+    margin-right: 300px;
+    font-size: 22px;
+  }
+
+  @media screen and (max-width: 280px) {
+    height: 50px;
+    width: 40%;
+    margin-right: 300px;
+  }
 `;
 
 export const FormButton = styled.button`
-  width: 50%;
+  width: 70%;
   height: 50px;
   margin-top: 10px;
+  margin-right: 120px;
+  margin-left: 50px;
 
   border-radius: 2px;
   background: rgb(116, 203, 160);
@@ -131,39 +194,52 @@ export const FormButton = styled.button`
   }
 
   @media screen and (max-width: 768px) {
-    height: 60px;
-    width: 75%;
-    font-size: 20px;
-    border-radius: 5px;
-    margin-top: 20px;
-    margin-left: 90px;
-    margin-right: 90px;
+    height: 50px;
+    width: 80%;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 50px;
+    width: 70%;
   }
 
   @media screen and (max-width: 414px) {
-    height: 60px;
-    width: 30%;
-    font-size: 20px;
-    border-radius: 5px;
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 50px;
+    height: 50px;
+    width: 50%;
+    margin-right: 220px;
+  }
+
+  @media screen and (max-width: 411px) {
+    height: 50px;
+    width: 60%;
+    margin-right: 220px;
   }
 
   @media screen and (max-width: 375px) {
-    height: 60px;
-    width: 45%;
-    font-size: 24px;
-    border-radius: 5px;
-    margin-top: 20px;
+    height: 50px;
+    width: 50%;
+    margin-right: 220px;
   }
 
-  @media screen and (max-width: 500px) {
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 130px;
-    width: 72%;
+  @media screen and (max-width: 360px) {
+    height: 50px;
+    width: 50%;
+    margin-right: 260px;
   }
+
+  @media screen and (max-width: 320px) {
+    height: 50px;
+    width: 40%;
+    margin-right: 300px;
+  }
+  
+  @media screen and (max-width: 280px) {
+    height: 50px;
+    width: 30%;
+    margin-right: 300px;
+  }
+
+
 `;
 
 export const FormContentLeft = styled.div`
@@ -196,12 +272,15 @@ export const FormContentRight = styled.div`
   background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(17, 17, 17) 100%);
 `;
 
-export const FormSuccessful = styled.h1`
+export const FormSuccessful = styled.p`
   text-align: center;
   font-size: 24px;
   margin-top: 80px;
-  color: black;
+  color: #203826;
   background: #e3fcec;
+  max-width: 300px;
+  margin-left: 20px;
+  margin-right: 10px;
 `;
 
 export const FormImage2 = styled.img`
@@ -257,6 +336,20 @@ export const TextArea = styled.textarea`
   @media screen and (max-width: 375px) {
     height: 50px;
     width: 55%;
+  }
+
+  @media screen and (max-width: 320px) {
+    height: 50px;
+    width: 40%;
+    margin-right: 300px;
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 280px) {
+    height: 50px;
+    width: 40%;
+    margin-right: 300px;
+    font-size: 22px;
   }
 `;
 

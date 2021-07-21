@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import validateSellInfo from "./validateSellInfo";
 
 const useForm = (callback, validate) => {
+
+
   const [values, setValues] = useState({
     name: "",
     contact_number: "",
@@ -15,6 +18,7 @@ const useForm = (callback, validate) => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [sellSubmit, setSellSubmit] = useState(false);
+  const [sellErrors, setsellErrors] = useState({});
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -25,7 +29,7 @@ const useForm = (callback, validate) => {
     });
   };
 
-  const FarmerSignup = async () => {
+  const sendSignupFarmerRequest = async () => {
     const data = {
       name: values["name"],
       contact_number: values["contact_number"],
@@ -36,8 +40,8 @@ const useForm = (callback, validate) => {
     };
 
     try {
-      await axios.post("http://localhost:3000/sell", data)
-      .then(setSellSubmit(true));
+      await axios.post("http://mandee.ap-south-1.elasticbeanstalk.com/buy", data)
+      .then(setSellSubmit(true))
     } catch (err) {
       console.error(err);
     }
@@ -54,8 +58,8 @@ const useForm = (callback, validate) => {
     };
 
     try {
-      await axios.post("http://localhost:3000/buy", data)
-      .then(setIsSubmitting(true));
+      await axios.post("http://mandee.ap-south-1.elasticbeanstalk.com/buy", data)
+      .then(setIsSubmitting(true))
     } catch (err) {
       console.error(err);
     }
@@ -64,26 +68,26 @@ const useForm = (callback, validate) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    setErrors(validate(values));
-
-    if (event.target.action === "http://localhost:3000/buy") {
+    if (event.target.action === "http://mandee.ap-south-1.elasticbeanstalk.com/buy") {
       sendOrderRequest();
+      setErrors(validate(values));
     } else {
-      FarmerSignup();
+      sendSignupFarmerRequest();
+      setsellErrors(validateSellInfo(values));
     }
   };
 
   useEffect(() => {
-    if (Object.keys(errors).length === 0 && isSubmitting) {
-      callback();
+    if(Object.keys(sellErrors).length === 0 && sellSubmit){
+      callback()
     }
 
-    if (Object.keys(errors).length === 0 && sellSubmit) {
-      callback();
+    if(Object.keys(errors).length === 0 && isSubmitting){
+      callback()
     }
-  }, []);
+  }, [sellErrors, errors]);
 
-  return { handleChange, handleSubmit, values, errors };
+  return { handleChange, handleSubmit, values, errors, sellErrors };
 };
 
 export default useForm;

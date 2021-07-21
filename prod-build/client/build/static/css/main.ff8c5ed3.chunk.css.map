@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/App.css"],"names":[],"mappings":"AAAA,EACE,qBAAsB,CACtB,QAAS,CACT,SAAU,CACV,2CACU,CACV,iBACF","file":"main.ff8c5ed3.chunk.css","sourcesContent":["* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-family: 'Noto Nastaliq Urdu',\n  sans-serif;\n  overflow-x: hidden;\n}\n"]}

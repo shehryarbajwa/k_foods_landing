@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import useForm from "./UseForm";
-import validate from "./validateInfo";
-import axios from "axios";
+import validateSellInfo from "./validateSellInfo";
 import {
   FormListContainer,
   FormHeading,
@@ -15,13 +14,10 @@ import {
 } from "./FormElements";
 
 const FormSell = ({ submitSellForm }) => {
-
-  const { handleChange, handleSubmit, values, errors } = useForm(
+  const { handleChange, handleSubmit, values, errors, sellErrors } = useForm(
     submitSellForm,
-    validate
+    validateSellInfo
   );
-
-  console.log("submitSellForm", submitSellForm);
 
   return (
     <>
@@ -37,7 +33,9 @@ const FormSell = ({ submitSellForm }) => {
               value={values.name}
               onChange={handleChange}
             />
-            <ErrorMessage>{errors.name && <p>{errors.name}</p>}</ErrorMessage>
+            <ErrorMessage>
+              {sellErrors.name && <p>{sellErrors.name}</p>}
+            </ErrorMessage>
           </FormListWrapper>
 
           <FormListWrapper>
@@ -50,7 +48,7 @@ const FormSell = ({ submitSellForm }) => {
               onChange={handleChange}
             />
             <ErrorMessage>
-              {errors.contact_number && <p>{errors.contact_number}</p>}
+              {sellErrors.contact_number && <p>{sellErrors.contact_number}</p>}
             </ErrorMessage>
           </FormListWrapper>
           <FormListWrapper>
@@ -64,7 +62,7 @@ const FormSell = ({ submitSellForm }) => {
               onChange={handleChange}
             />
             <ErrorMessage>
-              {errors.address && <p>{errors.address}</p>}
+              {sellErrors.address && <p>{sellErrors.address}</p>}
             </ErrorMessage>
           </FormListWrapper>
           <FormListWrapper>
@@ -77,7 +75,7 @@ const FormSell = ({ submitSellForm }) => {
               onChange={handleChange}
             />
             <ErrorMessage>
-              {errors.province && <p>{errors.province}</p>}
+              {sellErrors.province && <p>{sellErrors.province}</p>}
             </ErrorMessage>
           </FormListWrapper>
           <FormListWrapper>
@@ -100,9 +98,7 @@ const FormSell = ({ submitSellForm }) => {
               onChange={handleChange}
             ></TextArea>
           </FormListWrapper>
-          <FormButton type="submit">
-            Submit
-            </FormButton>
+          <FormButton type="submit">Submit</FormButton>
         </FormWrapper>
       </FormListContainer>
     </>
