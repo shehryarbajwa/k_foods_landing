@@ -1,6 +1,8 @@
 import React from "react";
 import useForm from "./UseForm";
 import validate from "./validateInfo";
+import AppleImage from "../../images/apple.svg";
+import BananaImage from "../../images/banana.svg";
 import {
   FormListContainer,
   FormHeading,
@@ -11,6 +13,11 @@ import {
   FormButton,
   TextArea,
   ErrorMessage,
+  FormListElementWrapper,
+  FormListElement,
+  FormListElementLabel,
+  FormListElementImage,
+  FormListElementLabelDiv
 } from "./FormElements";
 
 const FormBuy = ({ submitForm }) => {
@@ -18,6 +25,7 @@ const FormBuy = ({ submitForm }) => {
     submitForm,
     validate
   );
+  const checked = true;
 
   return (
     <>
@@ -77,17 +85,26 @@ const FormBuy = ({ submitForm }) => {
             </ErrorMessage>
           </FormListWrapper>
           <FormListWrapper>
-            <FormLabel> آپ کیا خرید رہے ہو </FormLabel>
-            <FormInput
-              type="text"
-              name="product"
-              placeholder=""
-              value={values.product}
-              onChange={handleChange}
-            />
+          <FormListElementLabelDiv>
+          <FormLabel> آپ کیا خرید رہے ہو </FormLabel>
+            <FormListElementWrapper>
+              <FormListElement>
+                <FormInput type="checkbox" checked='true' onChange={handleChange}/>
+                <FormListElementLabel>
+                  <FormListElementImage src={BananaImage} alt="Banana" />
+                </FormListElementLabel>
+              </FormListElement>
+              <FormListElement>
+                <FormInput type="checkbox" checked='true' onChange={handleChange} />
+                <FormListElementLabel >
+                  <FormListElementImage src={AppleImage} alt="Apple" />
+                </FormListElementLabel>
+              </FormListElement>
+            </FormListElementWrapper>
             <ErrorMessage>
               {errors.product && <p>{errors.product}</p>}
             </ErrorMessage>
+            </FormListElementLabelDiv>
           </FormListWrapper>
           <FormListWrapper>
             <FormLabel>کیا آپ کچھ اور شامل کرنا پسند کریں گے؟</FormLabel>

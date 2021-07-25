@@ -23,12 +23,9 @@ const About = () => {
         Mandi is solving one of the toughest problems in the world
         through technology. We connect producers of food directly with
         retailers, restaurants, and service providers using in-house
-        applications that drive end to end operations. Currently, our Supply
-        Chain is equipped to move 1400 tonnes of perishables from farms to
-        businesses, every day, in less than 12 hours.
+        applications that drive end to end operations. 
       </AboutWrapper>
       <AboutHeading>Growth and development</AboutHeading>
-      <AboutImage src={journey} alt="customer journey" />
     </AboutContainer>
   );
 };

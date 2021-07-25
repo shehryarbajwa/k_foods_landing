@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import validateSellInfo from "./validateSellInfo";
+import formService from "../../services/formData";
 
 const useForm = (callback, validate) => {
-
-
   const [values, setValues] = useState({
     name: "",
     contact_number: "",
@@ -40,8 +38,9 @@ const useForm = (callback, validate) => {
     };
 
     try {
-      await axios.post("http://mandee.ap-south-1.elasticbeanstalk.com/buy", data)
-      .then(setSellSubmit(true))
+      if (Object.keys(errors).length === 0) {
+        await formService.farmSignup(data).then(setSellSubmit(true));
+      }
     } catch (err) {
       console.error(err);
     }
@@ -58,8 +57,9 @@ const useForm = (callback, validate) => {
     };
 
     try {
-      await axios.post("http://mandee.ap-south-1.elasticbeanstalk.com/buy", data)
-      .then(setIsSubmitting(true))
+      if (Object.keys(sellErrors).length === 0) {
+        await formService.buyRequest(data).then(setIsSubmitting(true));
+      }
     } catch (err) {
       console.error(err);
     }
@@ -68,7 +68,8 @@ const useForm = (callback, validate) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (event.target.action === "http://mandee.ap-south-1.elasticbeanstalk.com/buy") {
+    if (event.target.action.includes("buy")) {
+      console.log(event.target.action);
       sendOrderRequest();
       setErrors(validate(values));
     } else {
@@ -78,12 +79,12 @@ const useForm = (callback, validate) => {
   };
 
   useEffect(() => {
-    if(Object.keys(sellErrors).length === 0 && sellSubmit){
-      callback()
+    if (Object.keys(sellErrors).length === 0 && sellSubmit) {
+      callback();
     }
 
-    if(Object.keys(errors).length === 0 && isSubmitting){
-      callback()
+    if (Object.keys(errors).length === 0 && isSubmitting) {
+      callback();
     }
   }, [sellErrors, errors]);
 

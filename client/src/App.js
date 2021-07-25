@@ -9,7 +9,6 @@ import Footer from "./components/Footer/index";
 import AboutPage  from "./pages/AboutPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 

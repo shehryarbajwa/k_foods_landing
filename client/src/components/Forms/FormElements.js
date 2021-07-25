@@ -6,7 +6,7 @@ export const FormContainer = styled.div`
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
   position: relative;
   border-radius: 10px;
-  height: 1150px;
+  height: 1250px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 `;
@@ -30,6 +30,50 @@ export const FormWrapper = styled.form`
   align-items: center;
 `;
 
+export const FormListElementWrapper = styled.ul`
+  list-style-type: none;
+`;
+
+export const FormListElement = styled.li`
+  display: inline-block;
+`;
+
+export const FormListElementLabel = styled.label`
+  border: 1px solid #e3fcec;
+  padding: 10px;
+  display: block;
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+
+  '&::before' {
+    background-color: #fff;
+    color: white;
+    content: "";
+    display: block;
+    border-radius: 50%;
+    border: 1px solid white;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 20px;
+    transition-duration: 0.6s;
+    transform: scale(0);
+  }
+`;
+
+export const FormListElementLabelDiv = styled.div``;
+
+export const FormListElementImage = styled.img`
+  height: 100px;
+  width: 100px;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+`;
+
 export const FormSellWrapper = styled.form`
   position: absolute;
   top: 50%;
@@ -41,7 +85,7 @@ export const FormSellWrapper = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export const FormListWrapper = styled.div`
   margin-bottom: 0.5rem;
@@ -64,8 +108,6 @@ export const FormHeading = styled.h3`
     width: 70%;
   }
 `;
-
-export const InputWrapper = styled.input``;
 
 export const FormLabel = styled.label`
   display: inline-block;
@@ -114,7 +156,7 @@ export const FormLabel = styled.label`
     width: 40%;
     margin-right: 300px;
   }
-  
+
   @media screen and (max-width: 280px) {
     height: 50px;
     width: 30%;
@@ -124,13 +166,31 @@ export const FormLabel = styled.label`
 `;
 
 export const FormInput = styled.input`
-  display: block;
+  display: ${({ checked }) => (checked ? "none" : "block")};
   padding-left: 10px;
   outline: none;
   border-radius: 2px;
   height: 50px;
   width: 100%;
   border: none;
+
+  &:checked + ${FormListElementLabel} {
+    background: #e3fcec;
+  }
+
+  &:checked + label:before {
+    content: "✔️";
+    color: grey;
+    cursor: pointer;
+    background-color: #e3fcec;
+    transform: scale(10);
+  }
+
+  &:checked + ${FormListElementLabel} img {
+    transform: scale(0.9);
+    
+    z-index: -1;
+  }
 
   @media screen and (max-width: 768px) {
     height: 50px;
@@ -232,14 +292,12 @@ export const FormButton = styled.button`
     width: 40%;
     margin-right: 300px;
   }
-  
+
   @media screen and (max-width: 280px) {
     height: 50px;
     width: 30%;
     margin-right: 300px;
   }
-
-
 `;
 
 export const FormContentLeft = styled.div`
