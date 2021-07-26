@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "./App.css";
 import Home from "./pages/index";
 import BuyPage from "./pages/BuyPage";
 import SellPage from "./pages/SellPage";
 import NavBar from "./components/NavBar/index";
-import Sidebar from './components/Sidebar/index';
+import Sidebar from "./components/Sidebar/index";
 import Footer from "./components/Footer/index";
-import AboutPage  from "./pages/AboutPage";
+import AboutPage from "./pages/AboutPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
   return (
     <Router>
       <Sidebar isOpen={isOpen} toggle={toggle} />
-      <NavBar toggle={toggle}/>
+      <NavBar toggle={toggle} />
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/about" component={AboutPage} exact />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import useForm from "./UseForm";
 import validate from "./validateInfo";
 import AppleImage from "../../images/apple.svg";
@@ -13,11 +13,13 @@ import {
   FormButton,
   TextArea,
   ErrorMessage,
-  FormListElementWrapper,
-  FormListElement,
-  FormListElementLabel,
-  FormListElementImage,
-  FormListElementLabelDiv
+  RadioButton,
+  RadioButtonWrapper,
+  CustomRadioLabel,
+  RadioButtonSelectIcon,
+  ProductIcon,
+  ProductImage,
+  ProductDescription,
 } from "./FormElements";
 
 const FormBuy = ({ submitForm }) => {
@@ -25,7 +27,12 @@ const FormBuy = ({ submitForm }) => {
     submitForm,
     validate
   );
-  const checked = true;
+
+  const RadioInput = useRef(null);
+
+  const checked = {
+    display: "none"
+  };
 
   return (
     <>
@@ -85,26 +92,42 @@ const FormBuy = ({ submitForm }) => {
             </ErrorMessage>
           </FormListWrapper>
           <FormListWrapper>
-          <FormListElementLabelDiv>
-          <FormLabel> آپ کیا خرید رہے ہو </FormLabel>
-            <FormListElementWrapper>
-              <FormListElement>
-                <FormInput type="checkbox" checked='true' onChange={handleChange}/>
-                <FormListElementLabel>
-                  <FormListElementImage src={BananaImage} alt="Banana" />
-                </FormListElementLabel>
-              </FormListElement>
-              <FormListElement>
-                <FormInput type="checkbox" checked='true' onChange={handleChange} />
-                <FormListElementLabel >
-                  <FormListElementImage src={AppleImage} alt="Apple" />
-                </FormListElementLabel>
-              </FormListElement>
-            </FormListElementWrapper>
-            <ErrorMessage>
-              {errors.product && <p>{errors.product}</p>}
-            </ErrorMessage>
-            </FormListElementLabelDiv>
+            <RadioButtonWrapper>
+              <CustomRadioLabel>
+                <FormInput 
+                type="radio" 
+                name="radio" 
+                checked="true"
+                value={values.product}
+                onChange={handleChange}
+                onClick={(e) => (console.log(e))}
+                />
+                <RadioButton >
+                  <RadioButtonSelectIcon ></RadioButtonSelectIcon>
+                  <ProductIcon>
+                    <ProductImage
+                      src={AppleImage}
+                      alt="logo"
+                    />
+                    <ProductDescription>شامل</ProductDescription>
+                  </ProductIcon>
+                </RadioButton>
+              </CustomRadioLabel>
+              <CustomRadioLabel>
+                <FormInput type="radio" name="radio" checked="true"/>
+                <RadioButton>
+                <RadioButtonSelectIcon ></RadioButtonSelectIcon>
+                  <ProductIcon>
+                    <ProductImage
+                      src={AppleImage}
+                      alt="logo"
+                    />
+                    <ProductDescription>شامل</ProductDescription>
+                  </ProductIcon>
+                </RadioButton>
+              </CustomRadioLabel>
+              
+              </RadioButtonWrapper>
           </FormListWrapper>
           <FormListWrapper>
             <FormLabel>کیا آپ کچھ اور شامل کرنا پسند کریں گے؟</FormLabel>

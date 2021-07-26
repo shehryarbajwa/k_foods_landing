@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 
 export const FormContainer = styled.div`
   margin: 120px auto;
@@ -28,50 +28,6 @@ export const FormWrapper = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
-
-export const FormListElementWrapper = styled.ul`
-  list-style-type: none;
-`;
-
-export const FormListElement = styled.li`
-  display: inline-block;
-`;
-
-export const FormListElementLabel = styled.label`
-  border: 1px solid #e3fcec;
-  padding: 10px;
-  display: block;
-  position: relative;
-  margin: 10px;
-  cursor: pointer;
-
-  '&::before' {
-    background-color: #fff;
-    color: white;
-    content: "";
-    display: block;
-    border-radius: 50%;
-    border: 1px solid white;
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    width: 25px;
-    height: 25px;
-    text-align: center;
-    line-height: 20px;
-    transition-duration: 0.6s;
-    transform: scale(0);
-  }
-`;
-
-export const FormListElementLabelDiv = styled.div``;
-
-export const FormListElementImage = styled.img`
-  height: 100px;
-  width: 100px;
-  transition-duration: 0.2s;
-  transform-origin: 50% 50%;
 `;
 
 export const FormSellWrapper = styled.form`
@@ -174,22 +130,8 @@ export const FormInput = styled.input`
   width: 100%;
   border: none;
 
-  &:checked + ${FormListElementLabel} {
-    background: #e3fcec;
-  }
-
-  &:checked + label:before {
-    content: "✔️";
-    color: grey;
-    cursor: pointer;
-    background-color: #e3fcec;
-    transform: scale(10);
-  }
-
-  &:checked + ${FormListElementLabel} img {
-    transform: scale(0.9);
-    
-    z-index: -1;
+  &::checked {
+    border: 20px solid blue;
   }
 
   @media screen and (max-width: 768px) {
@@ -413,4 +355,77 @@ export const TextArea = styled.textarea`
 
 export const ErrorMessage = styled.div`
   color: red;
+`;
+
+export const RadioButtonWrapper = styled.div`
+  margin-top: 30px;
+  margin-bottom: 20px;
+  height: 100%;
+  display: inline-block;;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const RadioButtons = styled.div`
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+`;
+
+export const RadioButton = styled.span`
+  margin: 10px;
+  width: 150px;
+  height: 100px;
+  border: 3px solid #e3fcec;
+  background-color: #e3fcec;
+  display: inline-block;
+  border-radius: 20px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 0 20px green;
+  cursor: pointer;
+`;
+
+export const CustomRadioLabel = styled.label``;
+
+export const RadioButtonSelectIcon = styled.i`
+  color: #fff;
+  background-color: #8373e6;
+  font-size: 80px;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%) scale(4);
+  border-radius: 50px;
+  padding: 3px;
+  transition: 0.2s;
+  display: block;
+  pointer-events: none;
+  opacity: 0;
+`;
+
+export const ProductIcon = styled.div`
+  width: 150px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
+export const ProductImage = styled.img`
+  width: 200px;
+  height: 60px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+`;
+
+export const ProductDescription = styled.h3`
+  color: black;
+  font-family: "Raleway", sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  text-transform: lowercase;
 `;

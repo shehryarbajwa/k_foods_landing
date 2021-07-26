@@ -9,7 +9,7 @@ import {
   FormComponentContainer
 
 } from './FormElements'
-import FarmerImage from '../../images/farmer.jpg';
+import FarmerImage from '../../images/farmer.jpeg';
 
 const Form = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
