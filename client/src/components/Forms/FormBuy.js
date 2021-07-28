@@ -13,25 +13,24 @@ import {
   FormButton,
   TextArea,
   ErrorMessage,
+  RadioWrapper,
+  RadioItem,
+  RadioButtonLabel,
   RadioButton,
-  RadioButtonWrapper,
-  CustomRadioLabel,
-  RadioButtonSelectIcon,
-  ProductIcon,
-  ProductImage,
-  ProductDescription,
+  RadioImage,
+  RadioText,
 } from "./FormElements";
 
 const FormBuy = ({ submitForm }) => {
-  const { handleChange, handleSubmit, values, errors } = useForm(
-    submitForm,
-    validate
-  );
+  const { handleChange, handleSubmit, values, errors, handleRadioChange } =
+    useForm(submitForm, validate);
 
-  const RadioInput = useRef(null);
+  const [select, setSelect] = useState("eggs");
 
-  const checked = {
-    display: "none"
+  const handleSelectChange = event => {
+    const value = event.target.value;
+    setSelect(value);
+    handleRadioChange(value);
   };
 
   return (
@@ -50,7 +49,6 @@ const FormBuy = ({ submitForm }) => {
             />
             <ErrorMessage>{errors.name && <p>{errors.name}</p>}</ErrorMessage>
           </FormListWrapper>
-
           <FormListWrapper>
             <FormLabel> اپنا ٹیلیفون نمبر درج کریں</FormLabel>
             <FormInput
@@ -83,7 +81,7 @@ const FormBuy = ({ submitForm }) => {
             <FormInput
               type="text"
               name="province"
-              placeholder=" صوبہ"
+              placeholder="صوبہ"
               value={values.province}
               onChange={handleChange}
             />
@@ -92,42 +90,33 @@ const FormBuy = ({ submitForm }) => {
             </ErrorMessage>
           </FormListWrapper>
           <FormListWrapper>
-            <RadioButtonWrapper>
-              <CustomRadioLabel>
-                <FormInput 
-                type="radio" 
-                name="radio" 
-                checked="true"
-                value={values.product}
-                onChange={handleChange}
-                onClick={(e) => (console.log(e))}
+            <FormLabel>آئٹم خریدیں</FormLabel>
+            <RadioWrapper>
+              <RadioItem>
+                <RadioButton
+                  type="radio"
+                  name="produce"
+                  value="eggs"
+                  checked={select === "eggs"}
+                  onChange={handleSelectChange}
                 />
-                <RadioButton >
-                  <RadioButtonSelectIcon ></RadioButtonSelectIcon>
-                  <ProductIcon>
-                    <ProductImage
-                      src={AppleImage}
-                      alt="logo"
-                    />
-                    <ProductDescription>شامل</ProductDescription>
-                  </ProductIcon>
-                </RadioButton>
-              </CustomRadioLabel>
-              <CustomRadioLabel>
-                <FormInput type="radio" name="radio" checked="true"/>
-                <RadioButton>
-                <RadioButtonSelectIcon ></RadioButtonSelectIcon>
-                  <ProductIcon>
-                    <ProductImage
-                      src={AppleImage}
-                      alt="logo"
-                    />
-                    <ProductDescription>شامل</ProductDescription>
-                  </ProductIcon>
-                </RadioButton>
-              </CustomRadioLabel>
-              
-              </RadioButtonWrapper>
+                <RadioButtonLabel />
+                <RadioText>انڈے</RadioText>
+                <RadioImage src={BananaImage} alt="Eggs" />
+              </RadioItem>
+              <RadioItem>
+                <RadioButton
+                  type="radio"
+                  name="produce"
+                  value="oranges"
+                  checked={select === "oranges"}
+                  onChange={handleSelectChange}
+                />
+                <RadioButtonLabel />
+                <RadioText>کینو</RadioText>
+                <RadioImage src={BananaImage} alt="Oranges" />
+              </RadioItem>
+            </RadioWrapper>
           </FormListWrapper>
           <FormListWrapper>
             <FormLabel>کیا آپ کچھ اور شامل کرنا پسند کریں گے؟</FormLabel>

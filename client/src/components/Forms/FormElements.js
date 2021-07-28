@@ -122,17 +122,13 @@ export const FormLabel = styled.label`
 `;
 
 export const FormInput = styled.input`
-  display: ${({ checked }) => (checked ? "none" : "block")};
-  padding-left: 10px;
+  display: ${({ checked }) => (checked ? "block" : "block")};
+  padding-left: ${({ checked }) => (checked ? "5px" : "10px")};
   outline: none;
   border-radius: 2px;
-  height: 50px;
+  height: ${({ checked }) => (checked ? "20px" : "50px")};
   width: 100%;
   border: none;
-
-  &::checked {
-    border: 20px solid blue;
-  }
 
   @media screen and (max-width: 768px) {
     height: 50px;
@@ -356,76 +352,147 @@ export const TextArea = styled.textarea`
 export const ErrorMessage = styled.div`
   color: red;
 `;
-
-export const RadioButtonWrapper = styled.div`
-  margin-top: 30px;
-  margin-bottom: 20px;
-  height: 100%;
-  display: inline-block;;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const RadioButtons = styled.div`
-  width: 50%;
-  margin: 0 auto;
-  text-align: center;
-`;
-
-export const RadioButton = styled.span`
-  margin: 10px;
-  width: 150px;
-  height: 100px;
-  border: 3px solid #e3fcec;
-  background-color: #e3fcec;
+export const RadioWrapper = styled.div`
+  overflow: hidden;
   display: inline-block;
-  border-radius: 20px;
+  height: auto;
+  padding: 5px 0px 0px 2px;
+  box-sizing: border-box;
+`;
+
+export const RadioItem = styled.div`
+  display: inline-block;
+  align-items: center;
+  height: 220px;
+  width: 190px;
   position: relative;
-  text-align: center;
-  box-shadow: 0 0 20px green;
-  cursor: pointer;
+  border: 1px solid #e3fcec;
+  background-color: #e3fcec;
+  box-shadow: 5px 5px 20px green;
+  border-radius: 30px;
+  margin-right: 20px;
+
+  @media screen and (max-width: 768px) {
+    display: inline-block;
+    height: 180px;
+    width: 42%;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 220px;
+    width: 50%;
+  }
+
+  @media screen and (max-width: 414px) {
+    height: 220px;
+    width: 50%;
+  }
+
+  @media screen and (max-width: 375px) {
+    height: 220px;
+    width: 50%;
+  }
+
+  @media screen and (max-width: 320px) {
+    height: 220px;
+    width: 50%;
+  }
+
+  @media screen and (max-width: 280px) {
+    height: 220px;
+    width: 50%;
+  }
 `;
 
-export const CustomRadioLabel = styled.label``;
-
-export const RadioButtonSelectIcon = styled.i`
-  color: #fff;
-  background-color: #8373e6;
-  font-size: 80px;
+export const RadioButtonLabel = styled.label`
   position: absolute;
-  top: -5px;
-  left: 50%;
-  transform: translateX(-50%) scale(4);
-  border-radius: 50px;
-  padding: 3px;
-  transition: 0.2s;
-  display: block;
-  pointer-events: none;
-  opacity: 0;
+  top: 2.5%;
+  left: 10%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #ccc;
 `;
 
-export const ProductIcon = styled.div`
-  width: 150px;
-  height: 80px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;
-
-export const ProductImage = styled.img`
+export const RadioImage = styled.img`
+  overflow:hidden;
+  height: 100px;
   width: 200px;
-  height: 60px;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -10%);
-`;
 
-export const ProductDescription = styled.h3`
-  color: black;
-  font-family: "Raleway", sans-serif;
-  font-size: 25px;
-  font-weight: 400;
-  text-transform: lowercase;
+  @media screen and (max-width: 768px) {
+    height: 100px;
+    width: 70%;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 100px;
+    width: 70%;
+  }
+
+  @media screen and (max-width: 414px) {
+    height: 100px;
+    width: 70%;
+  }
+
+  @media screen and (max-width: 375px) {
+    height: 100px;
+    width: 70%;
+  }
+
+  @media screen and (max-width: 320px) {
+    height: 100px;
+    width: 70%;
+  }
+
+  @media screen and (max-width: 280px) {
+    height: 100px;
+    width: 70%;
+  }
+`
+
+export const RadioText = styled.p`
+  font-size: 24px;
+  text-align: center;
+`
+
+export const RadioButton = styled.input`
+  position: relative;
+  left: 19px;
+  height: 24px;
+  width: 25px;
+  margin-bottom: 2px;
+  opacity: 0;
+  z-index: 1;
+  cursor: pointer;
+  margin-right: 20px;
+  &:hover ~ ${RadioButtonLabel} {
+    background: white;
+    &::after {
+      content: "✓";
+      font-family: "FontAwesome";
+      display: block;
+      color: black;
+      width: 12px;
+      height: 12px;
+      margin: 4px;
+    }
+  }
+  &:checked + ${RadioItem} {
+    background: blue;
+    border: 2px solid white;
+  }
+  &:checked + ${RadioButtonLabel} {
+    background: yellowgreen;
+    border: 1px solid yellowgreen;
+    &::after {
+      content: "✓";
+      font-family: "FontAwesome";
+      display: block;
+      color: white;
+      width: 12px;
+      height: 12px;
+      margin: 4px;
+    }
+  }
 `;

@@ -3,6 +3,7 @@ import validateSellInfo from "./validateSellInfo";
 import formService from "../../services/formData";
 
 const useForm = (callback, validate) => {
+  
   const [values, setValues] = useState({
     name: "",
     contact_number: "",
@@ -17,6 +18,7 @@ const useForm = (callback, validate) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [sellSubmit, setSellSubmit] = useState(false);
   const [sellErrors, setsellErrors] = useState({});
+  const [product, setProduct] = useState("");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -25,6 +27,10 @@ const useForm = (callback, validate) => {
       ...values,
       [name]: value,
     });
+  };
+
+  const handleRadioChange = (value) => {
+    setProduct(value);
   };
 
   const sendSignupFarmerRequest = async () => {
@@ -52,12 +58,14 @@ const useForm = (callback, validate) => {
       contact_number: values["contact_number"],
       address: values["address"],
       province: values["province"],
-      product: values["product"],
+      product: product,
       text: values["textarea"],
     };
 
+
     try {
       if (Object.keys(sellErrors).length === 0) {
+        console.log(data);
         await formService.buyRequest(data).then(setIsSubmitting(true));
       }
     } catch (err) {
@@ -69,7 +77,6 @@ const useForm = (callback, validate) => {
     event.preventDefault();
 
     if (event.target.action.includes("buy")) {
-      console.log(event.target.action);
       sendOrderRequest();
       setErrors(validate(values));
     } else {
@@ -88,7 +95,14 @@ const useForm = (callback, validate) => {
     }
   }, [sellErrors, errors]);
 
-  return { handleChange, handleSubmit, values, errors, sellErrors };
+  return {
+    handleChange,
+    handleSubmit,
+    values,
+    errors,
+    sellErrors,
+    handleRadioChange,
+  };
 };
 
 export default useForm;

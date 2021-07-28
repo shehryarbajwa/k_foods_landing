@@ -17,9 +17,6 @@ export default function validateInfo(values) {
     errors.province = "صوبہ درج کرنا ضروری ہے";
   }
 
-  if (!values.product) {
-    errors.product = "مکمل آرڈر ضروری ہے";
-  }
 
   return errors;
 }

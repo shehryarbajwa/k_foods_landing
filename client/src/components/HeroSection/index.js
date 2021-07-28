@@ -23,7 +23,7 @@ const HeroSection = () => {
   return (
     <HeroContainer id="home">
       <HeroBg>
-        <VideoBg playsInline autoPlay loop muted src="https://elasticbeanstalk-ap-south-1-022144084586.s3.ap-south-1.amazonaws.com/static/videos/Video.mp4" type="video/mp4" />
+        <VideoBg playsInline autoPlay loop muted src={Video} type="video/mp4" />
       </HeroBg>
       <HeroContent>
         <HeroH1>
